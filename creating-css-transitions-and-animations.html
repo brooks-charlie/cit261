@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <title>Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</title>
     <script type="text/javascript" src="creating-css-transitions-and-animations.js"></script>
-    <link rel="stylesheet" type="text/css" href="week07.css">
+    <link rel="stylesheet" type="text/css" href="creating-css-transitions-and-animations.css">
 </head>
 <body>
+
+        <div></div>
+        <nav>
+  <ul>
+    <li onfocus="myMove()" ><a href="#">Menu 1</a></li>
+    <li><a href="#">Menu 2</a></li>
+    <li><a href="#">Menu 3</a></li>
+    <li><a href="#">Menu 4</a></li>
+    </ul>
+    </nav>
+        <p>
+            <button onclick="myMove()">Click Me</button>
+        </p>
+        <div onclick="myMove()" id="container">
+            <div id="animate"></div>
+         </div>
+    <p>ease - specifies a transition effect with a slow start, then fast, then end slowly (this is default)</p>
+    <p>linear - specifies a transition effect with the same speed from start to end</p>
+    <p>ease-in - specifies a transition effect with a slow start</p>
+    <p>ease-out - specifies a transition effect with a slow end</p>
+    <p>ease-in-out - specifies a transition effect with a slow start and end</p>
+    <p>cubic-bezier(n,n,n,n) - lets you define your own values in a cubic-bezier function</p>
+        <div>
+</div>
 
 </body>
 </html>
