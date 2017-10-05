@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manipulating CSS Class Properties Using JavaScript</title>
+    <meta charset="UTF-8">
+    <link class="styles" rel="stylesheet" type="text/css" href="css5.css">
+
+
+    <style>
+    </style>
+    <script type="text/javascript" src="css.js"></script>
+
+</head>
+<body>
+<div class="document">
+    <div id="title">
+        <h1>Manipulating CSS Class Properties Using JavaScript</h1>
+        <p>This page demonstrates how to switch between different CSS stylesheets to achieve a given effect</p>
+    </div>
+    <div class="content">
+        <div id="menuBar">
+            <ul id="menuBarList">
+                <li class="menuBarItem" onclick="changeStylesheet(0)">CSS 0</li>
+                <li class="menuBarItem" onclick="changeStylesheet(1)">CSS 1</li>
+                <li class="menuBarItem" onclick="changeStylesheet(2)">CSS 2</li>
+                <li class="menuBarItem" onclick="changeStylesheet(3)">CSS 3</li>
+                <li class="menuBarItem" onclick="changeStylesheet(4)">CSS 4 (no style)</li>
+            </ul>
+        </div>
+        <div id="text">
+            <h1>Choose a Stylesheet</h1>
+            <p>Change the layout of this page by selecting different
+                stylesheets in the menu, or by selecting one of the following links:<br>
+                <a href="#" onclick="changeStylesheet(0)">CSS 0</a>,
+                <a href="#" onclick="changeStylesheet(1)">CSS 1</a>,
+                <a href="#" onclick="changeStylesheet(2)">CSS 2</a>,
+                <a href="#" onclick="changeStylesheet(3)">CSS 3</a>.
+            </p>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div id="sidebar">
+            <h3>Sidebar</h3>
+            <p>This is the sidebar</p>
+        </div>
+    </div>
+    <div id="bottom"></div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

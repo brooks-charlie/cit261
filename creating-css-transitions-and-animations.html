@@ -11,18 +11,19 @@
         <div></div>
         <nav>
   <ul>
-    <li onfocus="myMove()" ><a href="#">Menu 1</a></li>
+    <li><a href="#">Menu 1</a></li>
     <li><a href="#">Menu 2</a></li>
     <li><a href="#">Menu 3</a></li>
     <li><a href="#">Menu 4</a></li>
     </ul>
     </nav>
+        <div id="square" onmouseover="keyframeMove()"></div>
         <p>
             <button onclick="myMove()">Click Me</button>
         </p>
-        <div onclick="myMove()" id="container">
+        <!-- <div onmouseover="myMove()" id="container">
             <div id="animate"></div>
-         </div>
+         </div>-->
     <p>ease - specifies a transition effect with a slow start, then fast, then end slowly (this is default)</p>
     <p>linear - specifies a transition effect with the same speed from start to end</p>
     <p>ease-in - specifies a transition effect with a slow start</p>

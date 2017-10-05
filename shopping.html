@@ -2,6 +2,7 @@
 <html>
 <head>
     <script type="text/javascript" src="shopping.js"></script>
+    <script type="text/javascript" src="creating-css-transitions-and-animations.js"></script>
     <title>Brooks Corporation</title>
     <link rel="stylesheet" type="text/css" href="shopping.css">
     <style> /*<!-- One internal style -->*/
@@ -53,7 +54,7 @@
         <form action="" id="form1" >
 
             <div class="item">
-                <img src="images/rafting.png" width="275"/>
+                <img id="rafting" src="images/rafting.png" width="275" onmouseover="resize('rafting')" onmouseout="origSize('rafting')"/>
             </div>
             <div class="itemdesc">
                 <p class="itemName">Trip to Moab to go river rafting</p>
@@ -71,7 +72,7 @@
             <hr>
 
             <div class="item">
-                <img src="images/swimming.jpg" width="275"/>
+                <img id="swimming" src="images/swimming.jpg" width="275" onmouseover="keyframeMove('swimming')"/>
             </div>
             <div class="itemdesc">
                 <p class="itemName">Swimming in the pool</p>
@@ -88,7 +89,7 @@
             <hr>
 
             <div class="item">
-                <img src="images/rough_riders_gallery.png" width="275"/>
+                <img id="baseball" src="images/rough_riders_gallery.png" width="275" onmouseover="keyframeMove('baseball')"/>
             </div>
             <div class="itemdesc">
                 <p class="itemName">Baseball Game</p>

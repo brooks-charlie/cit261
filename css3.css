@@ -1,0 +1,117 @@
+/* #3 */
+body{
+    background: gray;
+    background: linear-gradient(gray, navy);
+    min-height: 600px;
+}
+#title h1{
+    text-transform: uppercase;
+    text-align: center;
+    /*background: #0fa; */
+    text-shadow: 3px 2px navy;
+    text-decoration: underline;
+}
+#title p{
+    text-decoration: underline;
+    font-family: courier;
+    color: white;
+}
+.content{ /* div */
+    /*background: #0ff;*/
+}
+.content p {
+    font-family:arial;
+}
+#text{
+    text-transform: lowercase;
+    color: white;
+    max-width: 400px;
+    display: block;
+    float: left;
+    padding-left: 200px;
+}
+#text h1{
+    text-align: center;
+}
+#text p{
+    padding-left: 15px;
+}
+#text p::first-letter {
+    font-size: xx-large;
+    text-transform: uppercase;
+}
+#text h1::first-letter {
+    color: #ff0000;
+    font-size: 45px;
+    text-transform: uppercase;
+
+}
+#menuBar { /* div */
+    position: fixed;
+    top: 100px;
+    left: 0;
+    max-width: 150px;
+}
+#menuBarList{ /* ul */
+
+}
+.menuBarItem{ /* li */
+    font-family: verdana;
+    list-style: none;
+    float: left;
+    text-transform: uppercase;
+    background-color: red;
+    text-align: center;
+    padding:10px 5px;
+    margin-top: 15px;
+    min-width: 150px;
+    color: white;
+    border-radius: 25px;
+    box-shadow: 5px 5px 2px gray;
+}
+.menuBarItem:hover{ /* li */
+    background-color: white;
+    color: navy;
+    width: 160px;
+    position: relative;
+    right: 5px;
+}
+h1{
+    color: red;
+}
+#sidebar{ /* grading */
+    border-radius: 25px;
+    max-width: 150px;
+    display: block;
+    float: right;
+    background: white;
+    padding: 5px;
+    color: navy;
+    box-shadow: 5px 5px 2px gray;
+}
+#sidebar:hover{ /* grading */
+    background: none;
+    box-shadow: none;
+    color: white;
+}
+h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+#bottom{
+    display: block;
+    position: absolute;
+    top: 600px;
+    left: 220px;
+    color: white;
+    visibility: hidden;
+}
+a:link{
+    color: cyan;
+}
+a:visited{
+    color: gray;
+}
+a:hover{
+    color: yellow;
+}

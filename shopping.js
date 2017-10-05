@@ -3,10 +3,10 @@
  */
 
 function getSubTotal() {
-    console.log("entered getSubTotal function");
+    //console.log("entered getSubTotal function");
     document.getElementsByClassName('qtyinput');
     var getTotalQty = document.getElementsByClassName('qtyinput');
-    console.log("getTotalQty is: " + getTotalQty);
+    //console.log("getTotalQty is: " + getTotalQty);
     var itemPrice = document.getElementsByClassName('itemPrice');
     var subTotal = 0;
     for (var i = 0; i<getTotalQty.length; i++){
@@ -14,9 +14,12 @@ function getSubTotal() {
         var tempPrice = parseFloat(itemPrice[i].innerHTML.match(/\d*\.\d\d/));
         subTotal = tempPrice * tempQty + subTotal;
     }
-    console.log("subTotal is: " + subTotal);
-    console.log(document.getElementById('totalamount').value = '$' + subTotal.toFixed(2));
-    document.getElementById("totalamount").value = '$' + subTotal.toFixed(2);
+    //console.log("subTotal is: " + subTotal);
+    //console.log(document.getElementById('totalamount').innerHTML = '$' + subTotal.toFixed(2));
+    //console.log(document.getElementById("totalamount").value);
+    //var st = document.getElementById("totalamount").innerHTML;
+    //console.log("subtotal is: " + st);
+    document.getElementById("totalamount").innerHTML = '$' + subTotal.toFixed(2);
 }
 
 function showSlogan(){

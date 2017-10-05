@@ -1,0 +1,21 @@
+.page{
+    background: blue;
+    /*background: linear-gradient(gray, navy);*/
+    min-height: 600px;
+}
+.li2{
+    list-style: square inside;
+}
+.ul1{
+    background-color: inherit;
+}
+.s1{
+    background-color: red;
+}
+.s2{
+    background-color: blue;
+}
+.s3{
+    background-color: green;
+    color:white;
+}

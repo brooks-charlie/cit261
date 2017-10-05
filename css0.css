@@ -1,0 +1,119 @@
+/* #0 */
+body{
+    background: blue;
+    background: linear-gradient(orange, yellow);
+    min-height: 600px;
+}
+#title h1{
+    text-transform: uppercase;
+    font-family: "Comic Sans MS";
+    text-align: center;
+    /*background: #0fa;
+    text-shadow: 3px 2px white;*/
+    text-decoration: none;
+}
+#title p{
+    text-decoration: underline;
+    font-family: Tahoma;
+    color: white;
+}
+.content{ /* div */
+    /*background: #0ff;*/
+}
+.content p {
+    font-family:arial;
+}
+#text{
+    text-transform: lowercase;
+    color: white;
+    max-width: 400px;
+    display: block;
+    float: left;
+    padding-left: 200px;
+}
+#text h1{
+    text-align: center;
+    font-family: Courier;
+}
+#text p{
+    padding-left: 15px;
+}
+#text p::first-letter {
+    font-size: large;
+    text-transform: uppercase;
+}
+#text h1::first-letter {
+    color: #ff0000;
+
+    text-transform: uppercase;
+
+}
+#menuBar { /* div */
+
+}
+#menuBarList{ /* ul */
+
+    padding: 10px;
+
+}
+.menuBarItem{ /* li */
+    /*font-family: verdana;
+    list-style: none;*/
+    display: inline;
+    text-transform: uppercase;
+    background-color: green;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    width: 100px;
+}
+.menuBarItem:nth-child(1){
+    background-color: white;
+    color: navy;
+}
+.menuBarItem:hover{ /* li */
+    background-color: white;
+    color: navy;
+    position: relative;
+}
+h1{
+    color: red;
+}
+#sidebar{ /* sidebar */
+
+    max-width: 150px;
+
+    position: fixed;
+    left: 40px;
+    background: green;
+    padding: 5px;
+    color: white;
+    box-shadow: 5px 5px 2px gray;
+    min-height: 300px;
+}
+#sidebar:hover{ /* sidebar */
+    background: none;
+    box-shadow: none;
+    color: navy;
+}
+h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+#bottom{
+    display: block;
+    position: absolute;
+    top: 600px;
+    left: 220px;
+    color: white;
+    visibility: hidden;
+}
+a:link{
+    color: cyan;
+}
+a:visited{
+    color: gray;
+}
+a:hover{
+    color: yellow;
+}
