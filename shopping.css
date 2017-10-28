@@ -437,22 +437,40 @@ ul{
         padding-bottom:15px;
     }
 }
-#swimming, #baseball{
+#swimming{
     /*width: 100px;
     height: 100px;*/
-    background-color: red;
+
     position: relative;
-    animation-name: movepicture;
-    animation-duration: 1s;
+    animation-name: movepictureright;
+    animation-duration: 2s;
     animation-play-state: paused;
     animation-iteration-count: infinite;
 }
-@keyframes movepicture {
+
+
+@keyframes movepictureright {
     0%   { left:0px; top:0px;}
     /*25%  { left:200px; top:0px;}*/
     50%  { left:400px; top:0px;width:320px}
     /*75%  { left:0px; top:200px;}*/
     100% { left:0px; top:0px;width:275px}
+}
+#baseball{
+    position: relative;
+    animation-name: movepicturedown;
+    animation-duration: 2s;
+    animation-play-state: paused;
+    animation-iteration-count: infinite;
+
+}
+@keyframes movepicturedown {
+    0%   { left:0px; top:0px;}
+    /*25%  { left:200px; top:0px;}*/
+    50%  { left:0px; top:400px;width:320px}
+    /*75%  { left:0px; top:200px;}*/
+    100% { left:0px; top:0px;width:275px}
+
 }
 #rafting{
     transition-property: width;

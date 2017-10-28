@@ -39,18 +39,19 @@ function keyframeMove(element){
     if (document.getElementById(element).style.animationPlayState != "running") {
         console.log(element + " is running");
         document.getElementById(element).style.animationPlayState = "running";
+        //The parameters are as follow: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+        document.getElementById(element).style.transform = "matrix(1, -0.5, 0, 1, 0, 0)";
     } else {
         console.log("paused");
         document.getElementById(element).style.animationPlayState = "paused";
+        //The parameters are as follow: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+        document.getElementById(element).style.transform = "matrix(1, 0, 0, 1, 0, 0)";
+
     }
 }
 function resize(element) {
-    //console.log(document.getElementById(element).style.width.value);
-    //if(document.getElementById(element).style.width != "321px") {
         document.getElementById(element).style.width = "321px";
-    //}else{
-      //  document.getElementById(element).style.width = "275px";
-        //}
+
 }
 
 function origSize(element){
