@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>AJAX requestiong a JSON file</title>
+
+      <script language="JavaScript" type="text/javascript" >
+
+         var xmlHTTP = new XMLHttpRequest();
+
+         function getCities(country) {
+             xmlHTTP.onreadystatechange =
+                 function()
+                 {
+                     if (xmlHTTP.readyState == 4 && xmlHTTP.status == 200) {
+                         var result = xmlHTTP.responseText;
+                         var line = result.split('\n');
+                         var city = [];
+                         // Loop through the line array elements and assign the city to a new array using regex
+                         for (var i = 0; i<line.length; i++) {
+                             city[i] = /[a-zA-Z]+\s?[a-zA-Z]*/.exec(line[i]);
+                         }
+                         var pop = [];
+                         // Loop through the line array elements and assign the population to a new array using regex
+                         for (var i = 0; i<line.length; i++) {
+                             pop[i] = /\d+,?\d+,?\d+/.exec(line[i]);
+                         }
+                         document.getElementById('head1').innerHTML = "City";
+                         document.getElementById('head2').innerHTML = "Population";
+                         document.getElementById('cities').innerText = city.join('\n');
+                         document.getElementById('pop').innerText = pop.join('\n');
+                         document.getElementById('head1').style.borderBottomStyle = "double";
+                         document.getElementById('head2').style.borderBottomStyle = "double";
+                         document.getElementById('country').innerHTML = country;
+                         switch(country){
+                             case "russia":
+                                 document.getElementById('country').style.color = "blue";
+                                 document.getElementById('country').style.background = "red";
+                                 break;
+                             case "usa":
+                                 document.getElementById('country').style.color = "white";
+                                 document.getElementById('country').style.background = "blue";
+                                 break;
+                             case "canada":
+                                 document.getElementById('country').style.color = "white";
+                                 document.getElementById('country').style.background = "red";
+                                 break;
+                             case "mexico":
+                                 document.getElementById('country').style.color = "white";
+                                 document.getElementById('country').style.background = "green";
+                                 break;
+                             default:
+                                 document.getElementById('country').style.color = "black";
+                         }
+                     }
+                     else{ // if nothing is ready to display, display nothing
+                         document.getElementById('cities').innerHTML = "";
+                         document.getElementById('pop').innerHTML = "";
+                         document.getElementById('country').innerHTML = "";
+                     }
+                 }
+             xmlHTTP.open("GET", country + ".txt", true);
+             xmlHTTP.send(null);
+         }
+         var xhr = new XMLHttpRequest();
+         function getFile(fileName) {
+             xhr.onreadystatechange =
+                 function()
+                 {
+                     var divId = document.getElementById("json");
+                     if (xhr.readyState == 4 && xhr.status == 200) {
+                         var response = xhr.responseText;
+                         var myObj = JSON.parse(response);
+
+                         for(var i=0;i<myObj.students.length;i++) {
+                             for (var keys0 in myObj.students[i]) {
+                                 switch (keys0) {
+                                     case "first":
+                                         divId.innerHTML = divId.innerHTML + "<br/>" + myObj.students[i][keys0];
+                                         break;
+                                     case "last":
+                                         divId.innerHTML = divId.innerHTML + " " + myObj.students[i][keys0];
+                                         break;
+                                     case "address":
+                                         for (var keys1 in myObj.students[i][keys0]) {
+
+                                             switch(keys1){
+                                                 case "city":
+                                                     divId.innerHTML = divId.innerHTML + "<br/>" + myObj.students[i][keys0][keys1];
+                                                     break;
+                                                 case "state":
+                                                     divId.innerHTML = divId.innerHTML + ", "+ myObj.students[i][keys0][keys1];
+                                                     break;
+                                                 case "zip":
+                                                     divId.innerHTML = divId.innerHTML + " "+ myObj.students[i][keys0][keys1];
+                                                     break;
+                                             }
+                                         }
+                                         break;
+                                     case "major":
+                                         divId.innerHTML = divId.innerHTML + "<br/>" + keys0 + ": " + myObj.students[i][keys0];
+                                         break;
+                                     case "gpa":
+                                         divId.innerHTML = divId.innerHTML + "<br/>" + "GPA" + ": " + myObj.students[i][keys0] + "<br/>";
+                                         break;
+                                 }
+                             }
+                         }
+
+                     }
+                     else{ // if nothing is ready to display, display nothing
+                         document.getElementById('json').innerHTML = "";
+
+                     }
+
+                 }
+             xhr.open("GET", fileName, true);
+             xhr.send(null);
+         }
+         function getjson(fileName) {
+             var myObj = JSON.parse(response);
+             document.write(myObj.students[0].first);
+
+         }
+      </script>
+
+   </head>
+   <body>
+   <h1>AJAX requestiong a JSON file</h1>
+   <h2>Part 1: Cities</h2>
+   <p>Choose a country below to display the population of the 10 largest cities in that country.</p>
+   <select name="countries" onchange="getCities(this.value)" style="display: block;">
+      <option>Select a country</option>
+      <option value="canada">Canada</option>
+      <option value="mexico">Mexico</option>
+      <option value="russia">Russia</option>
+      <option value="usa">USA</option>
+   </select>
+   <br/>
+<div id="country" style="text-transform: uppercase; font-weight: bold; max-width: 210px; text-align: center" ></div>
+   <br/>
+   <div id="head1" style="display: inline-block; min-width: 120px; font-weight: bold; "></div>
+   <div id="head2" style="display: inline-block; min-width: 90px; font-weight: bold; text-align: right; "></div>
+   <br/>
+<div id="cities" style="display: inline-block; min-width: 120px; height: 179px; margin-bottom: 2px;">
+</div>
+<div id="pop" style="display: inline-block; min-width: 90px; height: 179px; margin-bottom: 2px; text-align: right;">
+</div>
+   <br/>
+   <br/>
+   <h2>Part 2: Students</h2>
+   <input id="textField" type="text" value="json.txt"/>
+   <input type="button" value="GET File" onclick="getFile(textField.value)" />
+   <div id="json" style="text-transform: capitalize;"></div>
+   </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Tags</title>
+</head>
+<body>
+<p>Canvas and drawing</p>
+<canvas id="vehicleCanvas" width="400" height="200" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+
+    var body = document.getElementById("vehicleCanvas");
+    var ctxbody = body.getContext("2d");
+    ctxbody.beginPath();
+    ctxbody.moveTo(10, 80);               // Create a starting point
+    ctxbody.lineTo(80, 80);              // Bed of the truck
+    //ctx.arcTo(150, 80, 150, 70, 10);  // Create an arc
+    ctxbody.lineTo(80, 48);             // back window
+    ctxbody.lineTo(150,48);				// top of truck
+    ctxbody.lineTo(195,80);				// windsheild
+    ctxbody.lineTo(250,80);				// hood
+    ctxbody.lineTo(250,120);				// grill
+    ctxbody.lineTo(230,120);				// bottom front
+    //ctx.arcTo(150, 80, 150, 70, 10);  // Create an arc
+    ctxbody.arc(200, 120, 30, 0, 3.15, true); // front wheel well
+    ctxbody.lineTo(90,120);				// bottom middle
+    ctxbody.arc(60, 120, 30, 0, 3.15, true); // rear wheel well
+    ctxbody.lineTo(10,120);				// bottom rear
+    ctxbody.lineTo(10,80);				// tailgate
+    ctxbody.closePath();
+    ctxbody.stroke();                     // Draw it
+    ctxbody.fillStyle = 'red';
+    ctxbody.fill();
+
+    //Back tire
+    var cbt = document.getElementById("vehicleCanvas");
+    var ctxbt = cbt.getContext("2d");
+    ctxbt.beginPath();
+    ctxbt.arc(60, 130, 25, 0, 7);
+    ctxbt.stroke();
+    ctxbt.fillStyle = 'black';
+    ctxbt.fill();
+
+    //Back rim
+    var cbr = document.getElementById("vehicleCanvas");
+    var ctxbr = cbr.getContext("2d");
+    ctxbr.beginPath();
+    ctxbr.arc(60, 130, 10, 0, 7);
+    ctxbr.stroke();
+    ctxbr.fillStyle = 'silver';
+    ctxbr.fill();
+
+    // Front tire
+    var cft = document.getElementById("vehicleCanvas");
+    var ctxft = cft.getContext("2d");
+    ctxft.beginPath();
+    ctxft.arc(200, 130, 25, 0, 7);
+    ctxft.stroke();
+    ctxft.fillStyle = 'black';
+    ctxft.fill();
+
+    // Front rim
+    var cfr = document.getElementById("vehicleCanvas");
+    var ctxfr = cfr.getContext("2d");
+    ctxfr.beginPath();
+    ctxfr.arc(200, 130, 10, 0, 7);
+    ctxfr.stroke();
+    ctxfr.fillStyle = 'silver';
+    ctxfr.fill();
+
+</script>
+<div id="video">
+    <p>
+        Video File
+    </p>
+<video width="400" controls>
+    <source src="zoom_0.mp4" type="video/mp4">
+
+    Your browser does not support HTML5 video.
+</video>
+</div>
+<div id="audio">
+    <p>Audio File</p>
+    <audio controls>
+        <source src="audio4.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+</body>
+</html>

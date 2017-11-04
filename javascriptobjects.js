@@ -91,9 +91,14 @@ function Vehicle(type, color, doors, wheels) {
 }
 
 this.go = function(){
+
     if (document.getElementById('vehicle').style.animationPlayState != "running") {
         document.getElementById('vehicle').style.animationPlayState = "running";
         document.getElementById('drivebutton').innerHTML = "Stop Vehicle";
+
+        //var stopText = document.createTextNode("Stopp Vehicles");
+        //var buttonText = document.getElementById('drivediv').childNodes[0].innerHTML;
+        //document.getElementById('drivebutton').replaceChild(buttonText, stopText);
     } else {
         document.getElementById('vehicle').style.animationPlayState = "paused";
         document.getElementById('drivebutton').innerHTML = "Drive Vehicle";

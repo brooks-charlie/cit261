@@ -68,17 +68,19 @@
     <option value="19"></option>
 </datalist>
 <p></p>
-
-    <button id="storevehicle">Store Vehicle</button>
+<div id="buttons">
+    <!--<button id="storevehicle">Store Vehicle</button>-->
     <button id="retrievevehicle">Retrieve Vehicle</button>
     <button id="makevehicle">Make Vehicle</button>
+</div>
 </div>
 <div id="errormess">
 
 </div>
 
-<h1>Your Vehicle</h1>
+
 <div id="vehicle">
+    <h1>Your Vehicle</h1>
     <div id="vehicletop"></div>
     <div id="vehiclebottom"></div>
     <div id="vehiclerearwheel"></div>
@@ -93,7 +95,7 @@
     <div id="doorhandle2"></div>
 </div>
 <div id="drivediv">
-<button id="drivebutton">Drive Vehicle</button>
+<!-- <button id="drivebutton">Drive Vehicle</button> -->
 </div>
 <br>
 <div id="createarraydiv">
@@ -124,19 +126,51 @@
     var myRetrievedVehicleObj;
     var vehicleArray;
 
-    function makeVehicle(type){
-        if(type === "object") {
+    function makeVehicle(type) {
+        if (type === "object") {
             myVehicle = new Vehicle(document.getElementById('type').value,
                 document.getElementById('color').value,
                 document.getElementById('doors').value,
                 document.getElementById('wheels').value);
-        }else{
+        } else {
             vehicleArray = [
                 document.getElementById('type').value,
                 document.getElementById('color').value,
                 document.getElementById('doors').value,
                 document.getElementById('wheels').value];
             document.getElementById('createarrayspan').innerHTML = " The array elements are: " + vehicleArray;
+        }
+        // Add the drive button only after the vehicle has been made
+        // if the button is already there, don't create it again
+        if (!document.getElementById("drivebutton")) {
+            var driveButton = document.createElement("BUTTON");
+            var driveText = document.createTextNode("Drive Vehicle");
+            driveButton.appendChild(driveText);
+            document.getElementById("drivediv").appendChild(driveButton);
+            driveButton.id = "drivebutton";
+            // Call the go() method in the object
+            document.getElementById("drivebutton").addEventListener("click", function(){myVehicle.go()});
+        }
+        // Add the Store button only after the vehicle has been made
+        // if the button is already there, don't create it again
+        if(!document.getElementById("storevehicle")) {
+            var storeButton = document.createElement("BUTTON");
+            var storeText = document.createTextNode("Store Vehicle");
+            var buttons = document.getElementById("buttons");
+            storeButton.appendChild(storeText);
+            //use insertBefore() method to insert the store button before the other buttons in the buttons div
+            document.getElementById("buttons").insertBefore(storeButton,buttons.childNodes[0]);
+            storeButton.id = "storevehicle";
+            // Create an eventlistener for the button to call the storeVehicle function.
+            document.getElementById("storevehicle").addEventListener("click", function(){
+                storeVehicle(myVehicle);
+            });
+        }
+        //ReplaceChild - This replaces the 'Your Vehicle" node with the one in the Vehicle Name field
+        if(document.getElementById('vehiclename').value) {
+            var newVehicleNameNode = document.createTextNode(document.getElementById('vehiclename').value);
+            var vehicleNameNode = document.getElementById('vehicle').childNodes[1];
+            vehicleNameNode.replaceChild(newVehicleNameNode, vehicleNameNode.childNodes[0]);
         }
     }
     function stringify(vehicle){
@@ -190,18 +224,12 @@
         makeVehicle("object");
         myVehicle.display();
     });
-    // Call the go() method in the object
-    document.getElementById("drivebutton").addEventListener("click", function(){myVehicle.go()});
     // Create JSON from object and stringify
     document.getElementById("stringify").addEventListener("click", function(){
         stringify(myVehicle);
         document.getElementById('stringifydiv').innerHTML = myVehicleJSON;});
     // Convert JSON back to JS Ojbect
     document.getElementById("parse").addEventListener("click", parse);
-
-    document.getElementById("storevehicle").addEventListener("click", function(){
-        storeVehicle(myVehicle);
-    });
 
     document.getElementById("retrievevehicle").addEventListener("click", retrieveVehicle);
 
