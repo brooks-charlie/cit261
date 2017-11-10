@@ -74,7 +74,7 @@
     <button id="makevehicle">Make Vehicle</button>
 </div>
 </div>
-<div id="errormess">
+<div id="vnerrormess">
 
 </div>
 
@@ -184,9 +184,9 @@
     function storeVehicle(vehicle){
         //check to see if there is a Vehicle name before storing
         if(document.getElementById('vehiclename').value === ''){
-            document.getElementById('errormess').innerHTML = "Please enter a Vehicle Name to store it.";
+            document.getElementById('vnerrormess').innerHTML = "Please enter a Vehicle Name to store it.";
         }else{
-            document.getElementById('errormess').innerHTML = "";
+            document.getElementById('vnerrormess').innerHTML = "";
             makeVehicle("object");
             var vehicleString = stringify(vehicle);
             localStorage.setItem(document.getElementById('vehiclename').value, vehicleString);
@@ -196,11 +196,11 @@
         //check to see if the item is in storage first
         myRetrievedVehicle = localStorage.getItem(document.getElementById('vehiclename').value);
         if(document.getElementById('vehiclename').value === ''){
-            document.getElementById('errormess').innerHTML = "Please enter a valid Vehicle Name to retieve it.";
+            document.getElementById('vnerrormess').innerHTML = "Please enter a valid Vehicle Name to retieve it.";
         }else if (myRetrievedVehicle === null){
-            document.getElementById('errormess').innerHTML = "Sorry, '" + document.getElementById('vehiclename').value + "'" + " is not a valid stored Vehicle Name.";
+            document.getElementById('vnerrormess').innerHTML = "Sorry, '" + document.getElementById('vehiclename').value + "'" + " is not a valid stored Vehicle Name.";
         }else {
-            document.getElementById('errormess').innerHTML = '';
+            document.getElementById('vnerrormess').innerHTML = '';
             myRetrievedVehicleObj = JSON.parse(myRetrievedVehicle);
             //check to see if it's an object or an array
             if(myRetrievedVehicleObj.type) {

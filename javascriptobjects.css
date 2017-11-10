@@ -3,7 +3,7 @@
     text-align:right;
     width: 300px;
 }
-#errormess{
+#vnerrormess{
     position: absolute;
     display: inline-block;
 }

@@ -22,19 +22,21 @@
 </p>
 <div id="vehicleform">
     <span>Vehicle Name</span>
-    <input id="vehiclename" required>
+    <input id="vehiclename">
+    <div id="vnerrormess"></div>
     <p></p>
     <span>Vehicle Type</span>
     <select id="type" required>
-        <option></option>
+        <option value="">Select one...</option>
         <option value="car">car</option>
         <option value="truck">truck</option>
     </select>
+    <div id="typeerrormess"></div>
     <p></p>
 
     <span>Color</span>
     <select id="color" required>
-        <option></option>
+        <option value="">Select one...</option>
         <option value="blue">blue</option>
         <option value="chartreuse">chartreuse</option>
         <option value="red">red</option>
@@ -50,33 +52,33 @@
         <option value="orange">orange</option>
         <option value="silver">silver</option>
     </select>
+    <div id="colorerrormess"></div>
     <p></p>
     <span>Doors</span>
     <select id="doors" required>
-        <option></option>
+        <option value="">Select one...</option>
         <option value="2">2</option>
         <option value="4">4</option>
     </select>
+    <div id="doorserrormess"></div>
     <p></p>
     <span>Wheel Size</span>
     <select id="wheels" required>
-        <option></option>
+        <option value="">Select one...</option>
         <option value="15">15</option>
         <option value="16">16</option>
         <option value="17">17</option>
         <option value="18">18</option>
         <option value="19">19</option>
     </select>
+    <div id="wheelserrormess"></div>
     <p></p>
     <div id="buttons">
-        <!--<button id="storevehicle">Store Vehicle</button>-->
         <button id="retrievevehicle">Retrieve Vehicle</button>
         <button id="makevehicle">Make Vehicle</button>
     </div>
 </div>
-<div id="errormess">
 
-</div>
 
 <div id="vehiclenamediv"><h1>Your Vehicle</h1></div>
 <div id="vehicle">
@@ -128,9 +130,23 @@
     var myRetrievedVehicleObj;
     var vehicleArray;
 
-
-
     function makeVehicle(type) {
+        //check for valid selections
+        va = ["type", "color", "doors", "wheels"];
+        var errcount = 0;
+        for (var i = 0; i < va.length; i++) {
+            if (document.getElementById(va[i]).value === ""){
+                document.getElementById(va[i] + 'errormess').innerHTML = "Please select " + va[i] + ".";
+                errcount++;
+            }else{
+                document.getElementById(va[i] + 'errormess').innerHTML = "";
+            }
+        }
+        // if there are any invalid selections, don't continue.
+        if(errcount>0){
+            return;
+        }
+
         if (type === "object") {
             myVehicle = new Vehicle(document.getElementById('type').value,
                 document.getElementById('color').value,
@@ -144,6 +160,7 @@
                 document.getElementById('wheels').value];
             document.getElementById('createarrayspan').innerHTML = " The array elements are: " + vehicleArray;
         }
+
         // Add the drive button only after the vehicle has been made
         // if the button is already there, don't create it again
         if (!document.getElementById("drivebutton")) {
@@ -217,9 +234,9 @@
     function storeVehicle(vehicle){
         //check to see if there is a Vehicle name before storing
         if(document.getElementById('vehiclename').value === ''){
-            document.getElementById('errormess').innerHTML = "Please enter a Vehicle Name to store it.";
+            document.getElementById('vnerrormess').innerHTML = "Please enter a Vehicle Name to store it.";
         }else{
-            document.getElementById('errormess').innerHTML = "";
+            document.getElementById('vnerrormess').innerHTML = "";
             makeVehicle("object");
             var vehicleString = stringify(vehicle);
             localStorage.setItem(document.getElementById('vehiclename').value, vehicleString);
@@ -229,11 +246,11 @@
         //check to see if the item is in storage first
         myRetrievedVehicle = localStorage.getItem(document.getElementById('vehiclename').value);
         if(document.getElementById('vehiclename').value === ''){
-            document.getElementById('errormess').innerHTML = "Please enter a valid Vehicle Name to retieve it.";
+            document.getElementById('vnerrormess').innerHTML = "Please enter a valid Vehicle Name to retieve it.";
         }else if (myRetrievedVehicle === null){
-            document.getElementById('errormess').innerHTML = "Sorry, '" + document.getElementById('vehiclename').value + "'" + " is not a valid stored Vehicle Name.";
+            document.getElementById('vnerrormess').innerHTML = "Sorry, '" + document.getElementById('vehiclename').value + "'" + " is not a valid stored Vehicle Name.";
         }else {
-            document.getElementById('errormess').innerHTML = '';
+            document.getElementById('vnerrormess').innerHTML = '';
             myRetrievedVehicleObj = JSON.parse(myRetrievedVehicle);
             //check to see if it's an object or an array
             if(myRetrievedVehicleObj.type) {
