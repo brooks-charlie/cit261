@@ -156,14 +156,6 @@
             ////document.getElementById("drivebutton").addEventListener("click", function(){
             ////    myVehicle.go();
             ////});
-            document.getElementById("vehicle").addEventListener("ontouchstart", function(){
-                document.getElementById("vehicletop").style.borderBottomColor = "blue";
-                document.getElementById("vehiclebottom").style.backgroundColor = "blue";
-            });
-            document.getElementById("vehicle").addEventListener("ontouchend", function(){
-                document.getElementById("vehicletop").style.borderBottomColor = document.getElementById('color').value;
-                document.getElementById("vehiclebottom").style.backgroundColor = document.getElementById('color').value;
-            });
 
             document.getElementById("drivebutton").addEventListener("click", function(){
                 myVehicle.go();
@@ -282,7 +274,15 @@
     document.getElementById("deletestorage").addEventListener("click",function () {
         localStorage.clear();
 
-    })
+    });
+    document.getElementById("vehicle").addEventListener("ontouchstart", function(){
+        document.getElementById("vehicletop").style.borderBottomColor = "blue";
+        document.getElementById("vehiclebottom").style.backgroundColor = "blue";
+    });
+    document.getElementById("vehicle").addEventListener("ontouchend", function(){
+        document.getElementById("vehicletop").style.borderBottomColor = document.getElementById('color').value;
+        document.getElementById("vehiclebottom").style.backgroundColor = document.getElementById('color').value;
+    });
 
 
 
