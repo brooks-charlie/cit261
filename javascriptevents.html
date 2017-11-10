@@ -275,11 +275,11 @@
         localStorage.clear();
 
     });
-    document.getElementById("vehicle").addEventListener("ontouchstart", function(){
+    document.getElementById("vehicle").addEventListener("touchstart", function(){
         document.getElementById("vehicletop").style.borderBottomColor = "blue";
         document.getElementById("vehiclebottom").style.backgroundColor = "blue";
     });
-    document.getElementById("vehicle").addEventListener("ontouchend", function(){
+    document.getElementById("vehicle").addEventListener("touchend", function(){
         document.getElementById("vehicletop").style.borderBottomColor = document.getElementById('color').value;
         document.getElementById("vehiclebottom").style.backgroundColor = document.getElementById('color').value;
     });
