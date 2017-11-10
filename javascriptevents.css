@@ -1,0 +1,202 @@
+#vehicleform{
+    display: inline-block;
+    text-align:right;
+    width: 300px;
+}
+#errormess{
+    position: absolute;
+    display: inline-block;
+}
+#vehicle{
+
+    display: inline-block;
+
+}
+#vehicletop {
+    border-bottom: 30px solid #fff;
+    border-left: 20px solid transparent;
+    border-right: 40px solid transparent;
+    height: 0;
+    width: 100px;
+    margin-left:50px;
+
+    transition-property: border-bottom;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+}
+#vehiclebottom {
+    border-right: 40px solid transparent;
+    border-radius: 20px;
+    background-color:#fff;
+    height: 50px;
+    width: 260px;
+
+    transition-property: background-color;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+}
+#vehiclerearwheel {
+    display:inline-block;
+    position:relative;
+    top:-20px;
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left:20px;
+
+    transition-property: background-color;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+}
+#vehiclefrontwheel {
+    display:inline-block;
+    position:relative;
+    top:-20px;
+    left: 150px;
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+
+    transition-property: background-color;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+}
+#vehiclerearrim {
+    display:inline-block;
+    position:relative;
+    top:-29px;
+    left:-98px;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+
+    transition-property: background-color;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+}
+#vehiclefrontrim {
+    display:inline-block;
+    position:relative;
+    top:-29px;
+    left:72px;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+
+    transition-property: background-color;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+}
+@keyframes drivecar {
+    from   { left:0px;}
+    to  { left:800px;}
+
+}
+#vehicle.enable{
+    width:300px;
+    position: relative;
+    animation-name: drivecar;
+    animation-duration: 2s;
+    /*animation-play-state: paused;*/
+    animation-iteration-count: 1;
+}
+#drivediv{
+
+
+
+}
+#createarraydiv{
+
+
+
+
+}
+/*
+#obstacle{
+    position: absolute;
+    display: inline-block;
+    border-bottom: 30px solid #fff;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    height: 0;
+    width: 100px;
+    margin-left:100px;
+    margin-top: 85px;
+
+    transition-property: border-bottom;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+
+
+}
+
+#doors1{
+    position: relative;
+    display:inline-block;
+    border-style:solid;
+    border-color:silver;
+    border-top:1px;
+    width:150px;
+    top:-115px;
+    margin-left:50px;
+}
+#doors2{
+    position: absolute;
+    display:inline-block;
+    border-style:solid;
+    border-right:2px;
+    border-color:silver;
+    width:0px;
+    height:74px;
+    top:0px;
+    margin-left:-80px;
+}
+#doors3{
+    position: absolute;
+    display:inline-block;
+    border-style:solid;
+    border-right:2px;
+    border-color:silver;
+    width:0px;
+    height:44px;
+    top:30px;
+    margin-left:0px;
+}
+
+#doors4{
+    position: absolute;
+    display:inline-block;
+    border-style:solid;
+    border-right:2px;
+    left:48px;
+    width:0px;
+    height:23px;
+    top:30px;
+    border-color:silver;
+}
+
+#doorhandle1{
+    position: absolute;
+    display:inline-block;
+    border-style:solid;
+    border-top:2px;
+    width:10px;
+    top:40px;
+    left:55px;
+    border-color:gray;
+}
+#doorhandle2{
+    position: absolute;
+    display:inline-block;
+    border-style:solid;
+    border-top:2px;
+    width:10px;
+    top:40px;
+    left:135px;
+    border-color:gray;
+}
+*/
