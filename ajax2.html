@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        function getRedditPost() {
+            xhr.onreadystatechange =
+                function()
+                {
+                    var divId = document.getElementById("json");
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var response = xhr.response;
+                        var title = response.data.children[0].data.title;
+                        var author = response.data.children[0].data.author;
+                        document.getElementById('title').innerHTML = "<p> Title </p>" + title;
+                        document.getElementById('author').innerHTML = "<p> Author </p>" + author ;
+
+                    }
+                    else{ // if nothing is ready to display, display nothing
+                        document.getElementById('title').innerHTML = "";
+                        document.getElementById('author').innerHTML = "";
+
+                    }
+
+                }
+            xhr.open("GET", "https://www.reddit.com/r/popular/new.json?sort=new", true);
+            xhr.send(null);
+        }
+
+    </script>
+</head>
+<body>
+<h2>Ajax Web Service</h2>
+<p>This web service gets the latest post from the reddit channel called "Popular".</p>
+
+<input type="button" value="GET title and author from latest post from Popular reddit channel" onclick="getRedditPost()" />
+
+<div id="title"></div>
+
+<div id="author"></div>
+</body>
+</html>
