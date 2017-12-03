@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <meta charset="UTF-8">
+    <title>App</title>
+</head>
+<body onload="init()">
+<!--<canvas id="can2" width="800" height="1000"
+        style="border:1px solid #d3d3d3; width: 90%;">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+-->
+<script type="text/javascript">
+
+    // TO DO NEXT
+    // insert new page using appendChild or something
+    // upload documument
+    // video tutorials
+    // create blocks for canvas
+    // change transparancy of colors
+    // on touch controls
+    // fix the scrolling issue
+
+</script>
+
+<canvas id="can" width="800" height="1000">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+<div id="colorchoice">Choose Color</div>
+<div id="green" onclick="color(this)"></div>
+<div id="blue" onclick="color(this)"></div>
+<div id="red" onclick="color(this)"></div>
+<div id="yellow" onclick="color(this)"></div>
+<div id="orange" onclick="color(this)"></div>
+<div id="black" onclick="color(this)"></div>
+<div id="eraser">Eraser</div>
+<div id="white" onclick="color(this)"></div>
+<img id="canvasimg">
+<input type="button" value="save" id="btn" size="30" onclick="save()">
+<input type="button" value="clear" id="clr" size="23" onclick="erase()">
+<img id="pb" src="document.png"/>
+</body>
+</html>
