@@ -202,7 +202,10 @@ function saveImage() {
     window.location.hash = "saveSpace";
 }
 
+
+
 function saveLocal(){
+    //showName();
     //newPB.getPage(0);
     //check to see if there is a Vehicle name before storing
     if(document.getElementById('PBName').value === ''){
@@ -213,6 +216,7 @@ function saveLocal(){
         newPBJSON = JSON.stringify(newPB);
         localStorage.setItem(document.getElementById('PBName').value, newPBJSON);
     }
+
 }
 
 //function getDataURL(source,dest,callback){
@@ -236,6 +240,7 @@ function saveLocal(){
 //}
 
 function getLocal(PBName) {
+    //showName();
     //check to see if the item is in storage first
     var myPB = localStorage.getItem(document.getElementById('PBName').value);
     if (document.getElementById('PBName').value === '') {
@@ -288,6 +293,46 @@ function getLocal(PBName) {
     }
 }
 
+function showName(action) {
+    console.log(document.getElementById("name").style.visibility);
+    document.getElementById('errormess').innerHTML = "";
+    if (document.getElementById(action).style.visibility === "visible") {
+        document.getElementById("name").style.visibility = "hidden";
+        document.getElementById(action).style.visibility = "hidden";
+        document.getElementById("save").style.visibility = "hidden";
+        document.getElementById("get").style.visibility = "hidden";
+        if(action === "save"){
+            document.getElementById("get").style.visibility = "hidden";
+        }else{
+            document.getElementById("save").style.visibility = "hidden";
+        }
+
+
+
+    }else {
+        document.getElementById("name").style.visibility = "visible";
+        document.getElementById(action).style.visibility = "visible";
+        if(action === "save"){
+            document.getElementById("get").style.visibility = "hidden";
+        }else{
+            document.getElementById("save").style.visibility = "hidden";
+        }
+
+    }
+
+    //if(document.getElementById("PBName").value === "") {
+
+    //}else {
+
+      //  document.getElementById(action).style.visibility = "visible";
+      //  document.getElementById("PBName").value = "Please enter a name.";
+      //  document.getElementById("PBName").style.opacity = .2;
+      //  document.getElementById("name").style.visibility = "visible";
+    //}
+
+    //action;
+}
+
 function findxy(canvas,ctx,res, e) {
     if (res == 'down') {
         prevX = currX;
@@ -326,18 +371,36 @@ function findxy(canvas,ctx,res, e) {
 function enableBut() {
     console.log(document.getElementById("PBName").value);
     if(document.getElementById("PBName").value === "") {
-        document.getElementById("getLocal").style.opacity = .2;
-        document.getElementById("saveLocal").style.opacity = .2;
-        document.getElementById("getLocal").style.cursor = "not-allowed";
-        document.getElementById("saveLocal").style.cursor = "not-allowed";
+
+        //document.getElementById("getLocal").style.opacity = .2;
+        //document.getElementById("saveLocal").style.opacity = .2;
+        //document.getElementById("getLocal").style.cursor = "not-allowed";
+        //document.getElementById("saveLocal").style.cursor = "not-allowed";
     }else{
-        document.getElementById("getLocal").style.opacity = 1;
-        document.getElementById("saveLocal").style.opacity = 1;
+        document.getElementById("PBName").style.opacity = 1;
+        //document.getElementById("getLocal").style.opacity = 1;
+        //document.getElementById("saveLocal").style.opacity = 1;
         document.getElementById("getLocal").style.cursor = "auto";
         document.getElementById("saveLocal").style.cursor = "auto";
     }
 
-
+    //document.getElementById("PBName").addEventListener("click", function () {
+    //    document.getElementById("PBName").value = '';
+    //},false);
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

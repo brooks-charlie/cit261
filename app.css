@@ -33,8 +33,7 @@ li{
 
 }
 #saveLocal, #getLocal{
-    cursor: not-allowed;
-    opacity: .2;
+
 
 }
 #errormess{
@@ -42,11 +41,17 @@ li{
     font-size: 70px;
 }
 #name{
+    visibility: hidden;
     width:100%;
 }
 #namefield{
     font-size: 90px;
     width:100%;
+}
+#save, #get{
+    visibility: hidden;
+    position: absolute;
+    display: inline;
 }
 
 #PBName{
