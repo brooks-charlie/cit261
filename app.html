@@ -38,15 +38,15 @@
 <!--<input data-buttonText="Choose file" type="file" id="myFile3" accept="image/*" onchange="loadFile(event); ">
 <input type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Your label here.">
 -->
-<input type="button" id="myFile2" value="Get Page #1" onclick="document.getElementById('myFile').click(); " />
-<input type="file" style="display:none;" id="myFile" accept="image/*" name="file" onchange="loadFile(event) "/>
-<input type="button" value="Delete Everything in storage" id="clearStorage" class="btn" size="30" onclick="localStorage.clear()">
-
+<input type="button" class="buttons" id="myFile2" value="Insert Page #1" onclick="document.getElementById('myFile').click(); " />
+<input type="file" class="buttons" id="myFile" style="display:none;" accept="image/*" name="file" onchange="loadFile(event) "/>
+<!--<input type="button" class="buttons" id="clearStorage" value="Delete Everything in storage" class="btn" size="30" onclick="localStorage.clear()">
+-->
 <!--<input type="button" value="Insert" id="insert" size="30"  onclick="insert()">-->
-<input type="button" value="Save to Images" id="saveImage" class="btn" size="30" onclick="saveImage()">
-<input type="button" value="Save to local" id="saveLocal" class="btn" size="30" onclick="saveLocal()">
-<input type="button" value="Get from local" id="getLocal" class="btn" size="30" onclick="getLocal(document.getElementById('PBName').value)">
-<input type="button" value="Clear" id="clr" size="23" onclick="erase()">
+<input type="button" class="buttons" id="saveImage" value="Save to Images" class="btn" size="30" onclick="saveImage()">
+<input type="button" class="buttons" id="saveLocal" value="Save to local" class="btn" size="30" onclick="saveLocal()">
+<input type="button" class="buttons" id="getLocal" value="Get from local" class="btn" size="30" onclick="getLocal(document.getElementById('PBName').value)">
+<input type="button" class="buttons" id="clr" value="Clear" size="23" onclick="erase()">
 Name <input type="text" id="PBName"><div id="errormess"></div>
 <div id="colorchoice" class="colors">Choose Color</div>
 <div id="palatte">

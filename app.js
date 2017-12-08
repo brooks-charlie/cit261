@@ -42,7 +42,7 @@ function createCanvas(id){
 
 
 function insert(canvas,ctx,imageURL){
-console.log("canvas/id name is "+canvas+ " alt/ctx is "+ ctx);
+//console.log("canvas/id name is "+canvas+ " alt/ctx is "+ ctx);
     createCanvas(canvas);
 
     canvas = document.getElementById('can' + num);
@@ -117,7 +117,7 @@ var loadFile = function(event) {
     //var preview = document.getElementById('image'+imgNum);
     //canvasimg.src = URL.createObjectURL(event.target.files[0]);
     var fileNum = num+2;
-    document.getElementById("myFile2").value = 'Get Page #' + fileNum;
+    document.getElementById("myFile2").value = 'Insert Page #' + fileNum;
     createImg(URL.createObjectURL(event.target.files[0]));
     //createImg();
     //imgNum++;
@@ -136,14 +136,14 @@ function color(obj) {
     var palatte = document.getElementsByClassName("colors");
     for(i=0; i<palatte.length;i++){
         palatte[i].style.width = "14%";
-        palatte[i].style.height = "50px";
+        palatte[i].style.height = "100px";
         palatte[i].style.marginBottom = "12px";
         palatte[i].style.marginTop = "12px";
     }
     document.getElementById(obj.id).style.marginTop = "0px";
     document.getElementById(obj.id).style.marginBottom = "0px";
     document.getElementById(obj.id).style.width = "19%";
-    document.getElementById(obj.id).style.height = "75px";
+    document.getElementById(obj.id).style.height = "150px";
 
     x = obj.id;
     if (x == "white") y = 14;
@@ -168,7 +168,7 @@ function erase() {
     var canvasToRemove = document.getElementsByTagName("canvas");
     if (canvasToRemove.length > 0) {
     //ctx.clearRect(0, 0, w, h);
-    var parentNode = document.getElementById("body");
+    var parentNode = document.getElementById("canvases");
     var canvasCount = canvasToRemove.length;
     for (var i = canvasCount - 1; i >= 0; i--) {
         parentNode.removeChild(canvasToRemove[i]);

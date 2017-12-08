@@ -1,3 +1,17 @@
+.buttons{
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#errormess{
+    position: absolute;
+    font-size: 30px;
+}
 #colorchoice{
     position:absolute;
     top:450px;
@@ -14,7 +28,7 @@
     margin-bottom: 12px;
     margin-top: 12px;
     width:14%;
-    height: 50px;
+    height: 100px;
 }
 .colors:first-child{
     margin-left: 8px;
@@ -31,7 +45,7 @@
 }
 #yellow{
     width:19%;
-    height: 75px;
+    height: 150px;
     background:yellow;
     margin-bottom: 0px;
     margin-top: 0px;
