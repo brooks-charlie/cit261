@@ -323,3 +323,21 @@ function findxy(canvas,ctx,res, e) {
     }
 }
 
+function enableBut() {
+    console.log(document.getElementById("PBName").value);
+    if(document.getElementById("PBName").value === "") {
+        document.getElementById("getLocal").style.opacity = .2;
+        document.getElementById("saveLocal").style.opacity = .2;
+        document.getElementById("getLocal").style.cursor = "not-allowed";
+        document.getElementById("saveLocal").style.cursor = "not-allowed";
+    }else{
+        document.getElementById("getLocal").style.opacity = 1;
+        document.getElementById("saveLocal").style.opacity = 1;
+        document.getElementById("getLocal").style.cursor = "auto";
+        document.getElementById("saveLocal").style.cursor = "auto";
+    }
+
+
+
+}
+

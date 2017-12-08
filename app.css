@@ -2,15 +2,55 @@
     background-color: gray;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 20px 1px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 45px;
+    min-width:300px;
+}
+ul{
+
+    padding:0;
+    list-style: none;
+    width:100%;
+
+}
+li{
+    /*background-color: #4CAF50; /* Green
+    padding: 15px 32px;
+    font-size: 16px;*/
+    
+    min-width:300px;
+    width:20%;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+
+
+}
+#saveLocal, #getLocal{
+    cursor: not-allowed;
+    opacity: .2;
+
 }
 #errormess{
     position: absolute;
-    font-size: 30px;
+    font-size: 70px;
+}
+#name{
+    width:100%;
+}
+#namefield{
+    font-size: 90px;
+    width:100%;
+}
+
+#PBName{
+    font-size: 70px;
 }
 #colorchoice{
     position:absolute;
