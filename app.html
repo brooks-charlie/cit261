@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="appcanvasobject.js"></script>
     <link rel="stylesheet" type="text/css" href="app.css">
     <meta charset="UTF-8">
     <title>App</title>
 </head>
-<body onload="init()">
+<body id="body" onload="init()">
 <!--<canvas id="can2" width="800" height="1000"
         style="border:1px solid #d3d3d3; width: 90%;">
     Your browser does not support the HTML5 canvas tag.
@@ -15,31 +16,69 @@
 <script type="text/javascript">
 
     // TO DO NEXT
-    // insert new page using appendChild or something
-    // upload documument
+    // insert new page using appendChild or something -  done
+    // upload documument - done
+    // combine load, insert and upload into one button - done
+    // change transparancy of colors - done
+    // fix the scrolling issue - done
+    // use js objects for canvas and shapes on the canvas - trash
+    // use js objects for PB pages and data - done
+    // fix wait time for image load - done
+    // fix get from local function - done
+    //fix issue with drawing on only one image at a time - done
+
     // video tutorials
-    // create blocks for canvas
-    // change transparancy of colors
     // on touch controls
-    // fix the scrolling issue
+    // create blocks for canvas
+    // CSS design
+    // fix erase
+
 
 </script>
+<!--<input data-buttonText="Choose file" type="file" id="myFile3" accept="image/*" onchange="loadFile(event); ">
+<input type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Your label here.">
+-->
+<input type="button" id="myFile2" value="Get Page #1" onclick="document.getElementById('myFile').click(); " />
+<input type="file" style="display:none;" id="myFile" accept="image/*" name="file" onchange="loadFile(event) "/>
+<input type="button" value="Delete Everything in storage" id="clearStorage" class="btn" size="30" onclick="localStorage.clear()">
 
+<!--<input type="button" value="Insert" id="insert" size="30"  onclick="insert()">-->
+<input type="button" value="Save to Images" id="saveImage" class="btn" size="30" onclick="saveImage()">
+<input type="button" value="Save to local" id="saveLocal" class="btn" size="30" onclick="saveLocal()">
+<input type="button" value="Get from local" id="getLocal" class="btn" size="30" onclick="getLocal(document.getElementById('PBName').value)">
+<input type="button" value="Clear" id="clr" size="23" onclick="erase()">
+Name <input type="text" id="PBName"><div id="errormess"></div>
+<div id="colorchoice" class="colors">Choose Color</div>
+<div id="palatte">
+<div id="green" class="colors" onclick="color(this)"></div>
+<div id="blue" class="colors" onclick="color(this)"></div>
+<div id="red" class="colors" onclick="color(this)"></div>
+<div id="yellow" class="colors" onclick="color(this)"></div>
+<div id="orange" class="colors" onclick="color(this)"></div>
+<div id="black" class="colors" onclick="color(this)"></div>
+</div>
+<div id="eraser">Eraser</div>
+<div id="white" onclick="color(this)"></div>
+<!--
 <canvas id="can" width="800" height="1000">
     Your browser does not support the HTML5 canvas tag.
 </canvas>
-<div id="colorchoice">Choose Color</div>
-<div id="green" onclick="color(this)"></div>
-<div id="blue" onclick="color(this)"></div>
-<div id="red" onclick="color(this)"></div>
-<div id="yellow" onclick="color(this)"></div>
-<div id="orange" onclick="color(this)"></div>
-<div id="black" onclick="color(this)"></div>
-<div id="eraser">Eraser</div>
-<div id="white" onclick="color(this)"></div>
-<img id="canvasimg">
-<input type="button" value="save" id="btn" size="30" onclick="save()">
-<input type="button" value="clear" id="clr" size="23" onclick="erase()">
-<img id="pb" src="document.png"/>
+-->
+<div id="preview" >
+
+</div>
+
+<div id="canvases">
+
+</div>
+
+<img id="canvasimg" onload=""/>
+
+<div id="saveSpace">
+
+</div>
+
+
+
 </body>
 </html>

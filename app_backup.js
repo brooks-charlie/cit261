@@ -13,8 +13,7 @@
 var PBName;
 var imgNum = 0;
 var num = 0;
-//var canvas, ctx, flag = false,
-var flag = false,
+var canvas, ctx, flag = false,
     prevX = 0,
     currX = 0,
     prevY = 0,
@@ -23,27 +22,26 @@ var flag = false,
 
 var x = "yellow",
     y = 2;
-
 // Create a new PB object
 function init(){
     newPB = new PB();
 }
+function createCanvas(){
 
-function createCanvas(id){
-    var id = document.createElement("CANVAS");
-    id.id = "can"+num;
-    //id.width = 800;
-    //id.height = 1000;
-    document.getElementById("canvases").appendChild(id);
+    var canvas = document.createElement("CANVAS");
+    canvas.id = "can"+num;
+    canvas.width = 800;
+    canvas.height = 1000;
+    document.getElementById("canvases").appendChild(canvas);
 }
 
 
 
 
 
-function insert(canvas,ctx,imageURL){
-console.log("canvas/id name is "+canvas+ " alt/ctx is "+ ctx);
-    createCanvas(canvas);
+function insert(id,imageURL){
+
+    createCanvas();
 
     canvas = document.getElementById('can' + num);
     ctx = canvas.getContext("2d");
@@ -57,9 +55,9 @@ console.log("canvas/id name is "+canvas+ " alt/ctx is "+ ctx);
     //var img = new Image();
     //console.log("imageURL is "+imageURL);
     //if(id === 0){
-     //   img.src = imageURL;
+    //   img.src = imageURL;
     //}else{
-     var img = document.getElementById("image"+num);
+    var img = document.getElementById(id);
     //}
 
 
@@ -71,23 +69,23 @@ console.log("canvas/id name is "+canvas+ " alt/ctx is "+ ctx);
     var vRatio = canvas.height / img.height  ;
     var ratio  = Math.max ( hRatio, vRatio );
     //img.addEventListener("load", function() {
-        // execute drawImage statements here
+    // execute drawImage statements here
     ctx.drawImage(img, 0, 0, img.width,    img.height,     // source image
         0, 0, img.width*ratio, img.height*ratio); // destination image/size
     //}, false);
     //img.src = imageURL;
     //console.log("image is " + img.src);
     canvas.addEventListener("mousemove", function (e) {
-        findxy(canvas,ctx,'move', e)
+        findxy('move', e)
     }, false);
     canvas.addEventListener("mousedown", function (e) {
-        findxy(canvas,ctx,'down', e)
+        findxy('down', e)
     }, false);
     canvas.addEventListener("mouseup", function (e) {
-        findxy(canvas,ctx,'up', e)
+        findxy('up', e)
     }, false);
     canvas.addEventListener("mouseout", function (e) {
-        findxy(canvas,ctx,'out', e)
+        findxy('out', e)
     }, false);
 
     // Add the image to the PB object
@@ -101,9 +99,8 @@ function createImg(src) {
     var image = document.createElement("IMG");
     image.id = "image"+imgNum;
     image.className = "imagePreview";
-    image.onload = function(){insert(this.id,this.alt,this.src);};
+    image.onload = function(){insert(this.id,this.src);};
     image.src = src;
-    image.alt = num;
     document.getElementById("preview").appendChild(image);
     //console.log("createImg image is "+image.src);
     //insert("image"+imgNum,image.src);
@@ -129,28 +126,12 @@ var loadFile = function(event) {
 
 
 function color(obj) {
-    document.getElementById(obj.id).addEventListener("touchstart", function(){
-
-    });
-    //console.log(obj.id);
-    var palatte = document.getElementsByClassName("colors");
-    for(i=0; i<palatte.length;i++){
-        palatte[i].style.width = "14%";
-        palatte[i].style.height = "50px";
-        palatte[i].style.marginBottom = "12px";
-        palatte[i].style.marginTop = "12px";
-    }
-    document.getElementById(obj.id).style.marginTop = "0px";
-    document.getElementById(obj.id).style.marginBottom = "0px";
-    document.getElementById(obj.id).style.width = "19%";
-    document.getElementById(obj.id).style.height = "75px";
-
     x = obj.id;
     if (x == "white") y = 14;
     else y = 2;
 }
 
-function draw(ctx) {
+function draw() {
     ctx.beginPath();
     ctx.moveTo(prevX, prevY);
     ctx.lineTo(currX, currY);
@@ -167,13 +148,13 @@ function erase() {
     //Clear the screen but don't remove the pages from the PB object
     var canvasToRemove = document.getElementsByTagName("canvas");
     if (canvasToRemove.length > 0) {
-    //ctx.clearRect(0, 0, w, h);
-    var parentNode = document.getElementById("body");
-    var canvasCount = canvasToRemove.length;
-    for (var i = canvasCount - 1; i >= 0; i--) {
-        parentNode.removeChild(canvasToRemove[i]);
+        ctx.clearRect(0, 0, w, h);
+        var parentNode = document.getElementById("body");
+        var canvasCount = canvasToRemove.length;
+        for (var i = canvasCount - 1; i >= 0; i--) {
+            parentNode.removeChild(canvasToRemove[i]);
+        }
     }
-}
 }
 
 function saveImage() {
@@ -217,8 +198,8 @@ function saveLocal(){
 
 //function getDataURL(source,dest,callback){
 //    document.getElementById('canvasimg').src = source;
-    //dest = source;
-        //callback();
+//dest = source;
+//callback();
 //        console.log("in getdataurl");
 //    callback();
 
@@ -264,31 +245,31 @@ function getLocal(PBName) {
             //    console.log("done");
             //}
 
-                //i++;
+            //i++;
             //});
 
             //getDataURL(localStorageImage,canvasImage.src,function(){
-             //   if(console.log(document.getElementById("can"+i)) !== null){
-             //       console.log("it's not there");
-                    //getDataURL(localStorageImage,canvasImage.src,function(){
-                    //    console.log("second one");
-                    //});
-                    //console.log(document.getElementById("can"+i).id);
-              //  }else{
+            //   if(console.log(document.getElementById("can"+i)) !== null){
+            //       console.log("it's not there");
+            //getDataURL(localStorageImage,canvasImage.src,function(){
+            //    console.log("second one");
+            //});
+            //console.log(document.getElementById("can"+i).id);
+            //  }else{
 
-              //      console.log("not same");
-              //  }
+            //      console.log("not same");
+            //  }
             //});
             //canvasImage.src = localStorageImage;
             //console.log("number  " + i);
             //    console.log("its the same");
             //    console.log("number is " + i);
-                //canvasImage.src = localStorageImage;
+            //canvasImage.src = localStorageImage;
         }
     }
 }
 
-function findxy(canvas,ctx,res, e) {
+function findxy(res, e) {
     if (res == 'down') {
         prevX = currX;
         prevY = currY;
@@ -318,7 +299,7 @@ function findxy(canvas,ctx,res, e) {
             //currY = e.clientY - canvas.offsetTop;
             currX = e.pageX - canvas.offsetLeft;
             currY = e.pageY - canvas.offsetTop;
-            draw(ctx);
+            draw();
         }
     }
 }
