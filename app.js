@@ -50,8 +50,8 @@ function insert(canvas,ctx,imageURL){
     canvas = document.getElementById('can' + num);
     ctx = canvas.getContext("2d");
     // Set canvas size based on window size.
-    canvas.width = document.documentElement.clientWidth - 20;
-    canvas.height = canvas.width * .64;//1.3; //assumes 8.5 x 11 sheet of paper
+    canvas.width = document.documentElement.clientWidth - 60;
+    canvas.height = canvas.width * 1.3;//1.3; //assumes 8.5 x 11 sheet of paper
     w = canvas.width;
     h = canvas.height;
 
@@ -102,12 +102,15 @@ function insert(canvas,ctx,imageURL){
 
     // Touch screen events
     canvas.addEventListener("touchmove", function (e) {
+
         findxy(canvas,ctx,'move', e)
     }, false);
     canvas.addEventListener("touchstart", function (e) {
+        document.getElementById("body").style.overflow = hidden;
         findxy(canvas,ctx,'down', e)
     }, false);
     canvas.addEventListener("touchend", function (e) {
+        document.getElementById("body").style.overflow = scroll;
         findxy(canvas,ctx,'up', e)
     }, false);
     canvas.addEventListener("touchcancel", function (e) {
