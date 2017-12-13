@@ -9,6 +9,7 @@
 //   ctx.drawImage(img, 0, 0, img.width,    img.height,     // source image
 //       0, 0, img.width*ratio, img.height*ratio); // destination image/size
 //};
+document.ontouchmove = function(e){ e.preventDefault(); }
 
 var PBName;
 var imgNum = 0;
