@@ -22,12 +22,10 @@ var flag = false,
     dot_flag = false;
 
 var x = "yellow",
-    y = 2;
+    y = 15;
 
 // Create a new PB object
-function init(){
-    newPB = new PB();
-}
+
 
 function createCanvas(id){
     var id = document.createElement("CANVAS");
@@ -37,7 +35,11 @@ function createCanvas(id){
     document.getElementById("canvases").appendChild(id);
 }
 
+function init(){
+    newPB = new PB();
+    //insert();
 
+}
 
 
 
@@ -49,7 +51,7 @@ function insert(canvas,ctx,imageURL){
     ctx = canvas.getContext("2d");
     // Set canvas size based on window size.
     canvas.width = document.documentElement.clientWidth - 20;
-    canvas.height = canvas.width * 1.3; //assumes 8.5 x 11 sheet of paper
+    canvas.height = canvas.width * .64;//1.3; //assumes 8.5 x 11 sheet of paper
     w = canvas.width;
     h = canvas.height;
 
@@ -59,7 +61,7 @@ function insert(canvas,ctx,imageURL){
     //if(id === 0){
      //   img.src = imageURL;
     //}else{
-     var img = document.getElementById("image"+num);
+
     //}
 
 
@@ -67,16 +69,24 @@ function insert(canvas,ctx,imageURL){
     //img.height = 199;
     //console.log("img2 is " +img2.src);
     //var img = document.getElementById('canvasimg');
-    var hRatio = canvas.width / img.width    ;
-    var vRatio = canvas.height / img.height  ;
-    var ratio  = Math.max ( hRatio, vRatio );
-    //img.addEventListener("load", function() {
+    if(imageURL !== null) {
+        var img = document.getElementById("image" + num);
+        var hRatio = canvas.width / img.width;
+        var vRatio = canvas.height / img.height;
+        var ratio = Math.max(hRatio, vRatio);
+        //img.addEventListener("load", function() {
         // execute drawImage statements here
-    ctx.drawImage(img, 0, 0, img.width,    img.height,     // source image
-        0, 0, img.width*ratio, img.height*ratio); // destination image/size
+        ctx.drawImage(img, 0, 0, img.width, img.height,     // source image
+            0, 0, img.width * ratio, img.height * ratio); // destination image/size
+    } //else{
+      //  var hRatio = canvas.width;
+      //  var vRatio = canvas.height;
+
+    //}
     //}, false);
     //img.src = imageURL;
     //console.log("image is " + img.src);
+    // Mouse events
     canvas.addEventListener("mousemove", function (e) {
         findxy(canvas,ctx,'move', e)
     }, false);
@@ -87,6 +97,20 @@ function insert(canvas,ctx,imageURL){
         findxy(canvas,ctx,'up', e)
     }, false);
     canvas.addEventListener("mouseout", function (e) {
+        findxy(canvas,ctx,'out', e)
+    }, false);
+
+    // Touch screen events
+    canvas.addEventListener("touchmove", function (e) {
+        findxy(canvas,ctx,'move', e)
+    }, false);
+    canvas.addEventListener("touchstart", function (e) {
+        findxy(canvas,ctx,'down', e)
+    }, false);
+    canvas.addEventListener("touchend", function (e) {
+        findxy(canvas,ctx,'up', e)
+    }, false);
+    canvas.addEventListener("touchcancel", function (e) {
         findxy(canvas,ctx,'out', e)
     }, false);
 
@@ -147,7 +171,7 @@ function color(obj) {
 
     x = obj.id;
     if (x == "white") y = 14;
-    else y = 2;
+    //else y = 2;
 }
 
 function draw(ctx) {
@@ -306,9 +330,6 @@ function showName(action) {
         }else{
             document.getElementById("save").style.visibility = "hidden";
         }
-
-
-
     }else {
         document.getElementById("name").style.visibility = "visible";
         document.getElementById(action).style.visibility = "visible";
@@ -317,7 +338,6 @@ function showName(action) {
         }else{
             document.getElementById("save").style.visibility = "hidden";
         }
-
     }
 
     //if(document.getElementById("PBName").value === "") {

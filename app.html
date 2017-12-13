@@ -35,22 +35,52 @@
 
 
 </script>
+<!--
+<div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+</div>
+-->
 <!--<input data-buttonText="Choose file" type="file" id="myFile3" accept="image/*" onchange="loadFile(event); ">
 <input type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Your label here.">
 -->
+
+<div class="navbar">
+    <ul>
+        <li>
+            <span type="button" class="buttons" id="myFile2" onclick="document.getElementById('myFile').click();" ontouchstart="document.getElementById('myFile').click();" >Insert Page #1</span>
+            <input type="file" class="buttons" id="myFile" style="display:none;" size="40" accept="image/*" name="file" onchange="loadFile(event) "/>
+
+        </li>
+        <li>
+            <span type="button" class="buttons" id="saveImage" onclick="saveImage()">Save as Images</span>
+
+        </li>
+        <li>
+            <span type="button" class="buttons" id="saveLocal" onclick="showName('save')">Save to local</span>
+        </li>
+        <li>
+            <span type="button" class="buttons" id="getLocal" onclick="showName('get')">Get from local</span>
+        </li>
+    </ul>
+</div>
 <ul><li>
-<input type="button" class="buttons" id="myFile2" value="Insert Page #1" size="40" onclick="document.getElementById('myFile').click(); " />
+<!--
+    <input type="button" class="buttons" id="myFile2" value="Insert Page #1" size="40" onclick="document.getElementById('myFile').click(); " />
 
     <input type="file" class="buttons" id="myFile" style="display:none;" size="40" accept="image/*" name="file" onchange="loadFile(event) "/>
+-->
 <!--<input type="button" class="buttons" id="clearStorage" value="Delete Everything in storage" class="btn" size="30" onclick="localStorage.clear()">
 -->
 <!--<input type="button" value="Insert" id="insert" size="30"  onclick="insert()">-->
     </li><li>
-<input type="button" class="buttons" id="saveImage" value="Save as Images" size="40" onclick="saveImage()">
+<!--<input type="button" class="buttons" id="saveImage" value="Save as Images" size="40" onclick="saveImage()">-->
     </li><li>
-<input type="button" class="buttons" id="saveLocal" value="Save to local" size="40" onclick="showName('save')">
+    <!--
+<input type="button" class="buttons" id="saveLocal" value="Save to local" size="40" onclick="showName('save')">-->
     </li><li>
-    <input type="button" class="buttons" id="getLocal" value="Get from local" size="40" onclick="showName('get')">
+    <!--<input type="button" class="buttons" id="getLocal" value="Get from local" size="40" onclick="showName('get')">-->
 
    <!-- <input type="button" class="buttons" id="getLocal" value="Get from local" size="40" onclick="getLocal(document.getElementById('PBName').value)">-->
     </li><!--<li>
@@ -65,12 +95,12 @@
 </div><div id="errormess"></div>
 
 <div id="palatte">
-<div id="green" class="colors" onclick="color(this)"></div>
-<div id="blue" class="colors" onclick="color(this)"></div>
-<div id="red" class="colors" onclick="color(this)"></div>
-<div id="yellow" class="colors" onclick="color(this)"></div>
-<div id="orange" class="colors" onclick="color(this)"></div>
-<div id="black" class="colors" onclick="color(this)"></div>
+<div id="green" class="colors" onclick="color(this)"><img src="green.png" alt="Green"></div>
+<div id="blue" class="colors" onclick="color(this)"><img src="blue.png" alt="Blue"></div>
+<div id="red" class="colors" onclick="color(this)"><img src="red.png" alt="Red"></div>
+<div id="yellow" class="colors" onclick="color(this)"><img src="yellow.png" alt="Yellow"></div>
+<div id="orange" class="colors" onclick="color(this)"><img src="orange.png" alt="Orange"></div>
+<div id="black" class="colors" onclick="color(this)"><img src="gray.png" alt="Black"></div>
 </div>
 
 <div id="white" onclick="color(this)"></div>

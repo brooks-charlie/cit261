@@ -1,5 +1,6 @@
+body {margin:0;}
 .buttons{
-    background-color: gray;
+    background-color: darkslateblue;
     border: none;
     color: white;
     padding: 20px 1px;
@@ -8,6 +9,9 @@
     display: inline-block;
     font-size: 45px;
     min-width:300px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
 }
 ul{
 
@@ -28,8 +32,11 @@ li{
     text-align: center;
     text-decoration: none;
     display: inline-block;
+/*
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
 
-
+*/
 
 }
 #saveLocal, #getLocal{
@@ -57,15 +64,37 @@ li{
 #PBName{
     font-size: 70px;
 }
-#colorchoice{
-    position:absolute;
-    top:450px;
-    left:10px;
-}
-#palatte{
 
+#palatte{
+    /*overflow: hidden;
+
+    position: fixed;
+    top: 0;
     width: 100%;
-    align-items:center;
+*/
+    width: 100%;
+    align-items:center;/*
+    position: fixed;
+    top:0;
+
+    overflow: hidden;*/
+}
+#palatte.colors{
+       opacity: .5;
+        display: inline-block;
+        margin-bottom: 12px;
+        margin-top: 12px;
+        width:14%;
+        height: 100px;
+    /*
+            display: block;
+
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        */
+
 }
 .colors{
     opacity: .5;
@@ -75,12 +104,45 @@ li{
     width:14%;
     height: 100px;
 }
+.colors img{
+
+    width:100%;
+    height: 100px;
+    display: block;
+}
+
+.navbar {
+    overflow: hidden;
+    /*background-color: #333;*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+}
+
+.navbar li {
+
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    /*padding: 4px 6px;*/
+    text-decoration: none;
+    font-size: 10px;
+
+}
+.navbar ul{
+    /*width: 100%;*/
+}
+
 .colors:first-child{
     margin-left: 8px;
+
 }
 #green{
 
     background:green;
+
 }
 #blue{
     background:blue;
@@ -128,13 +190,21 @@ li{
     display: inline-block;
 
     width:75%;
+    height:auto;
 }
 #saveSpace{
     position: absolute;
 }
 canvas{
     border:2px solid;
+    border-radius: 13px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 #eraser{
     position:absolute;top:490px;left:10px;
+}
+
+@media handheld {
+    
 }
