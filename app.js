@@ -106,11 +106,9 @@ function insert(canvas,ctx,imageURL){
         findxy(canvas,ctx,'move', e)
     }, false);
     canvas.addEventListener("touchstart", function (e) {
-        document.getElementById("body").style.overflow = hidden;
         findxy(canvas,ctx,'down', e)
     }, false);
     canvas.addEventListener("touchend", function (e) {
-        document.getElementById("body").style.overflow = scroll;
         findxy(canvas,ctx,'up', e)
     }, false);
     canvas.addEventListener("touchcancel", function (e) {
