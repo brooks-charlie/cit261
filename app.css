@@ -2,7 +2,6 @@ body {
     margin:0;
 }
 .navbar {
-
     overflow: hidden;
     background-color: darkslateblue;
     position: fixed;
@@ -17,15 +16,12 @@ body {
     color: #f2f2f2;
     text-align: center;
     padding: 20px 0px;
-
     text-decoration: none;
     font-size: 40px;
-
     width:24%;
     border: none;
-
 }
-.navbar ul{
+ul{
     list-style: none;
 }
 
@@ -77,7 +73,7 @@ body {
     overflow: hidden;
     position: fixed;
     top: 100px;
-background-color: white;
+    background-color: white;
     /*overflow: hidden;
 
     position: fixed;
@@ -166,6 +162,7 @@ background-color: white;
     visibility: collapse;
     display: none;
     width:50%;
+    overflow:hidden;
 }
 .imagePreview{
     visibility: collapse;

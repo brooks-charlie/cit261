@@ -29,8 +29,8 @@
       <file leaf-file-name="app.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="210" column="14" lean-forward="false" selection-start-line="210" selection-start-column="14" selection-end-line="210" selection-end-column="14" />
+            <state relative-caret-position="178">
+              <caret line="164" column="20" lean-forward="false" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -308,7 +308,7 @@
       <workItem from="1511669218390" duration="653000" />
       <workItem from="1512099468004" duration="13250000" />
       <workItem from="1512446604271" duration="116269000" />
-      <workItem from="1512795120990" duration="4647000" />
+      <workItem from="1512795120990" duration="5021000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript">
       <created>1506400236978</created>
@@ -426,7 +426,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="281430000" />
+    <option name="totallyTimeSpent" value="281804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1248" height="755" extended-state="0" />
@@ -840,8 +840,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="210" column="14" lean-forward="false" selection-start-line="210" selection-start-column="14" selection-end-line="210" selection-end-column="14" />
+        <state relative-caret-position="178">
+          <caret line="164" column="20" lean-forward="false" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
           <folding />
         </state>
       </provider>
