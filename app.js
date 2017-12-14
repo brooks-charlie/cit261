@@ -182,7 +182,6 @@ function color(obj) {
     document.getElementById(obj.id).style.marginBottom = "0px";
     document.getElementById(obj.id).style.width = "19%";
     document.getElementById(obj.id).style.height = "150px";
-
     x = obj.id;
     //if (x == "white") y = 14;
     //else y = 2;
