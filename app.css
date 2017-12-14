@@ -177,6 +177,7 @@ ul{
 
 }
 #scroll{
+    display: none;
     color: blue;
     font-size: 20px;
     position: absolute;
@@ -219,10 +220,13 @@ canvas{
     position:absolute;top:490px;left:10px;
 }
 
-#keepstill{
-    overflow:hidden;
-}
+
 @media screen and (max-width: 1067px) {
+    #scroll{
+        min-height: 600px;
+        display: inherit;
+        font-size: 40px;
+    }
     body {
 
     }
