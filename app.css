@@ -188,7 +188,7 @@ ul{
     display: none;
     color: blue;
     font-size: 20px;
-    position: absolute;
+    position: fixed;
     right:0;
     top:320px;
     text-transform: uppercase;
@@ -234,9 +234,9 @@ canvas{
 
 @media screen and (max-width: 1067px) {
     #scroll{
-        min-height: 600px;
+        min-height: 900px;
         display: inherit;
-        font-size: 40px;
+        font-size: 60px;
     }
     body {
 
