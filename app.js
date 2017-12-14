@@ -32,7 +32,7 @@ function init(){
 }
 
 function createCanvas(id){
-    var id = document.createElement("CANVAS");
+    id = document.createElement("CANVAS");
     id.id = "can"+num;
     //id.width = 800;
     //id.height = 1000;
@@ -67,22 +67,30 @@ function insert(canvas,ctx,imageURL){
     //img.height = 199;
     //console.log("img2 is " +img2.src);
     //var img = document.getElementById('canvasimg');
+
+
     if(imageURL !== null) {
         var img = document.getElementById("image" + num);
         //console.log(img.width);
         var iRatio = img.height / img.width;
         //var ipRatio = img.width / img.height;
         if(iRatio < 1){ // image is landscape
-            canvas.height = iRatio * img.width;
+            canvas.height = iRatio * canvas.width;
             h = canvas.height;
             //0.6604584527
+            //console.log("landscape");
+
         }else{ // image is portrait
             //1.5140997831
             var ipRatio = img.width / img.height;
-            canvas.height = ipRatio * img.width;
+            canvas.height = ipRatio * canvas.width;
             h = canvas.height;
+            //console.log("portrait");
         }
-
+        //console.log("image width is "+img.width);
+        //console.log("image height is " +img.height);
+        //console.log("canvas width is "+ canvas.width);
+        //console.log("canvas height is "+ canvas.height);
 
 
         var hRatio = canvas.width / img.width;
@@ -152,7 +160,7 @@ function createImg(src) {
 
 var loadFile = function(event) {
 
-    var fileupload = document.getElementById("myFile");
+    //var fileupload = document.getElementById("myFile");
     //var preview = document.getElementById('image'+imgNum);
     //canvasimg.src = URL.createObjectURL(event.target.files[0]);
     var fileNum = num+2;
