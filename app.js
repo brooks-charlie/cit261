@@ -103,7 +103,6 @@ function insert(canvas,ctx,imageURL){
 
     // Touch screen events
     canvas.addEventListener("touchmove", function (e) {
-
         findxy(canvas,ctx,'move', e)
     }, false);
     canvas.addEventListener("touchstart", function (e) {
@@ -155,16 +154,15 @@ var loadFile = function(event) {
 
 
 function color(obj) {
-    document.getElementById(obj.id).addEventListener("touchstart", function(){
-
-    });
+    //document.getElementById(obj.id).addEventListener("touchstart", function(){
+    //});
     //console.log(obj.id);
     var palatte = document.getElementsByClassName("colors");
     for(i=0; i<palatte.length;i++){
-        palatte[i].style.width = "14%";
+        palatte[i].style.width = "15%";
         palatte[i].style.height = "100px";
-        palatte[i].style.marginBottom = "12px";
-        palatte[i].style.marginTop = "12px";
+        palatte[i].style.marginBottom = "50px";
+        palatte[i].style.marginTop = "0px";
     }
     document.getElementById(obj.id).style.marginTop = "0px";
     document.getElementById(obj.id).style.marginBottom = "0px";
@@ -172,7 +170,7 @@ function color(obj) {
     document.getElementById(obj.id).style.height = "150px";
 
     x = obj.id;
-    if (x == "white") y = 14;
+    //if (x == "white") y = 14;
     //else y = 2;
 }
 
@@ -225,7 +223,27 @@ function saveImage() {
         //window.open(document.getElementById("canvasimg").src);
         //window.open('document.png', '_blank');
     }
-    window.location.hash = "saveSpace";
+    //console.log("animationstart");
+    //document.getElementById("savemessage").className = "fade";
+    //document.getElementById("savemessage").className = "none";
+    //document.getElementById("palatte").innerHTML = "Scroll Down to See Images.";
+    //document.getElementById("palatte").style.fontSize = "45px";
+    //window.location.hash = "saveSpace";
+    //document.getElementById("savemessage").className = "fade";
+    //console.log("animationstart");
+    document.getElementById("savemessage").setAttribute("class","fade");
+    document.getElementById("savemessage").addEventListener("webkitAnimationStart", function(){
+        document.getElementById("savemessage").setAttribute("class","fade");
+    });
+    document.getElementById("savemessage").addEventListener("animationstart", function(){
+        document.getElementById("savemessage").setAttribute("class","fade");
+    });
+    document.getElementById("savemessage").addEventListener("webkitAnimationEnd", function(){
+        document.getElementById("savemessage").className = "none";
+    });
+    document.getElementById("savemessage").addEventListener("animationend", function(){
+        document.getElementById("savemessage").className = "none";
+    });
 }
 
 

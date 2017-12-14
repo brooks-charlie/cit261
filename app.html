@@ -47,11 +47,11 @@
 <!--<input data-buttonText="Choose file" type="file" id="myFile3" accept="image/*" onchange="loadFile(event); ">
 <input type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Your label here.">
 -->
-
+    <!--ontouchstart="document.getElementById('myFile').click();"-->
 <div class="navbar">
     <ul>
         <li>
-            <span type="button" class="buttons" id="myFile2" onclick="document.getElementById('myFile').click();" ontouchstart="document.getElementById('myFile').click();" >Insert Page #1</span>
+            <span type="button" class="buttons" id="myFile2" onclick="document.getElementById('myFile').click();"  >Insert Page #1</span>
             <input type="file" class="buttons" id="myFile" style="display:none;" size="40" accept="image/*" name="file" onchange="loadFile(event) "/>
 
         </li>
@@ -98,6 +98,7 @@
 </div><div id="errormess"></div>
 
 <div id="palatte">
+    <p id="savemessage" class="none">Scroll Down to See Images.</p>
 <div id="green" class="colors" onclick="color(this)"><img src="green.png" alt="Green"></div>
 <div id="blue" class="colors" onclick="color(this)"><img src="blue.png" alt="Blue"></div>
 <div id="red" class="colors" onclick="color(this)"><img src="red.png" alt="Red"></div>
