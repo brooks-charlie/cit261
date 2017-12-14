@@ -9,7 +9,7 @@
 //   ctx.drawImage(img, 0, 0, img.width,    img.height,     // source image
 //       0, 0, img.width*ratio, img.height*ratio); // destination image/size
 //};
-document.ontouchmove = function(e){ e.preventDefault(); }
+
 
 var PBName;
 var imgNum = 0;
@@ -27,6 +27,9 @@ var x = "yellow",
 
 // Create a new PB object
 
+function init(){
+    newPB = new PB();
+}
 
 function createCanvas(id){
     var id = document.createElement("CANVAS");
@@ -36,23 +39,17 @@ function createCanvas(id){
     document.getElementById("canvases").appendChild(id);
 }
 
-function init(){
-    newPB = new PB();
-    //insert();
-
-}
-
-
-
 function insert(canvas,ctx,imageURL){
 //console.log("canvas/id name is "+canvas+ " alt/ctx is "+ ctx);
     createCanvas(canvas);
 
     canvas = document.getElementById('can' + num);
+    canvas.ontouchmove = function(e){ e.preventDefault(); };
     ctx = canvas.getContext("2d");
     // Set canvas size based on window size.
-    canvas.width = document.documentElement.clientWidth - 60;
-    canvas.height = canvas.width * 1.3;//1.3; //assumes 8.5 x 11 sheet of paper
+    canvas.width = document.documentElement.clientWidth - 160;
+    //console.log(canvas.width);
+    //canvas.height = canvas.width * .64;//1.3; //assumes 8.5 x 11 sheet of paper
     w = canvas.width;
     h = canvas.height;
 
@@ -72,7 +69,24 @@ function insert(canvas,ctx,imageURL){
     //var img = document.getElementById('canvasimg');
     if(imageURL !== null) {
         var img = document.getElementById("image" + num);
+        //console.log(img.width);
+        var iRatio = img.height / img.width;
+        //var ipRatio = img.width / img.height;
+        if(iRatio < 1){ // image is landscape
+            canvas.height = iRatio * img.width;
+            h = canvas.height;
+            //0.6604584527
+        }else{ // image is portrait
+            //1.5140997831
+            var ipRatio = img.width / img.height;
+            canvas.height = ipRatio * img.width;
+            h = canvas.height;
+        }
+
+
+
         var hRatio = canvas.width / img.width;
+        //console.log(img.height);
         var vRatio = canvas.height / img.height;
         var ratio = Math.max(hRatio, vRatio);
         //img.addEventListener("load", function() {
