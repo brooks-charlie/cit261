@@ -14,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+            <state relative-caret-position="356">
+              <caret line="113" column="23" lean-forward="true" selection-start-line="113" selection-start-column="23" selection-end-line="113" selection-end-column="23" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -26,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="225" column="21" lean-forward="false" selection-start-line="225" selection-start-column="21" selection-end-line="225" selection-end-column="21" />
+            <state relative-caret-position="211">
+              <caret line="175" column="0" lean-forward="true" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -39,8 +39,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="183" column="59" lean-forward="false" selection-start-line="183" selection-start-column="59" selection-end-line="183" selection-end-column="59" />
+            <state relative-caret-position="2056">
+              <caret line="158" column="48" lean-forward="false" selection-start-line="158" selection-start-column="48" selection-end-line="158" selection-end-column="48" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -113,10 +113,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>new</find>
-      <find>newPB</find>
-      <find>src</find>
-      <find>settime</find>
       <find>pbname</find>
       <find>document.getelements</find>
       <find>canvasimg</find>
@@ -142,7 +138,11 @@
       <find>canvas.height</find>
       <find>color</find>
       <find>keepstill</find>
+      <find>canvas</find>
+      <find>loadfile</find>
+      <find>palatte</find>
       <find>touchstart</find>
+      <find>white</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -288,7 +288,7 @@
       <workItem from="1511669218390" duration="653000" />
       <workItem from="1512099468004" duration="13250000" />
       <workItem from="1512446604271" duration="116269000" />
-      <workItem from="1512795120990" duration="16344000" />
+      <workItem from="1512795120990" duration="18430000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript">
       <created>1506400236978</created>
@@ -406,7 +406,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="293127000" />
+    <option name="totallyTimeSpent" value="295213000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1248" height="755" extended-state="0" />
@@ -807,29 +807,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="183" column="59" lean-forward="false" selection-start-line="183" selection-start-column="59" selection-end-line="183" selection-end-column="59" />
+        <state relative-caret-position="2056">
+          <caret line="158" column="48" lean-forward="false" selection-start-line="158" selection-start-column="48" selection-end-line="158" selection-end-column="48" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.html">
+    <entry file="file://$PROJECT_DIR$/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="211">
+          <caret line="175" column="0" lean-forward="true" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.css">
+    <entry file="file://$PROJECT_DIR$/app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="225" column="21" lean-forward="false" selection-start-line="225" selection-start-column="21" selection-end-line="225" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="356">
+          <caret line="113" column="23" lean-forward="true" selection-start-line="113" selection-start-column="23" selection-end-line="113" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

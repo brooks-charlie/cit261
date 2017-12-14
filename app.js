@@ -156,7 +156,7 @@ var loadFile = function(event) {
     //var preview = document.getElementById('image'+imgNum);
     //canvasimg.src = URL.createObjectURL(event.target.files[0]);
     var fileNum = num+2;
-    document.getElementById("myFile2").value = 'Insert Page #' + fileNum;
+    document.getElementById("myFile2").innerHTML = 'Insert Page #' + fileNum;
     createImg(URL.createObjectURL(event.target.files[0]));
     //createImg();
     //imgNum++;
