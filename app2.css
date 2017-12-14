@@ -12,6 +12,7 @@ body {
 }
 .navbar li {
     cursor: pointer ;
+    /*float: left;*/
     display: inline-block;
     color: #f2f2f2;
     text-align: center;
@@ -25,7 +26,26 @@ ul{
     list-style: none;
 }
 
+/*
+.buttons{
+    background-color: darkslateblue;
+    border: none;
+    color: white;
+    padding: 20px 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 45px;
+    min-width:300px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+*/
+
 #saveLocal, #getLocal{
+
+
 }
 #errormess{
     position: absolute;
@@ -38,7 +58,7 @@ ul{
     height: 250px;
     visibility: hidden;
     width:100%;
-    left:5px;
+    left:-50px;
 }
 #namefield{
     font-size: 90px;
@@ -51,6 +71,8 @@ ul{
     margin-left: 5px;
     display: inline-block;
     background-color: darkslateblue;
+    /*height: 80px;
+    width: 80px;*/
     cursor: pointer ;
     text-align: center;
     padding:25px;
@@ -67,8 +89,21 @@ ul{
     position: fixed;
     top: 100px;
     background-color: white;
+
+    /*overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+*/
+
     text-align: center;
     width: 100%;
+
+    /*
+    position: fixed;
+    top:0;
+
+    overflow: hidden;*/
 }
 #palatte #savemessage{
     opacity: 0;
@@ -90,11 +125,21 @@ ul{
     opacity: .5;
     display: inline-block;
 
+    /*
+            display: block;
+
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        */
+
 }
 .colors{
     opacity: .5;
     display: inline-block;
     margin-bottom: 50px;
+    /*margin-top: 12px;*/
     width:15%;
     height: 100px;
 }
@@ -137,7 +182,7 @@ ul{
 #white{
     visibility: hidden;
     width:50px;
-    height:300px;
+    height:50px;
     background:white;
     border:2px solid;
 }
@@ -216,3 +261,10 @@ canvas{
 
 
 }
+/*
+@media screen and (max-width: 646px) {
+    #palatte{
+        top:200px;
+    }
+}
+*/

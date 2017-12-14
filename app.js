@@ -1,20 +1,8 @@
-// window.onload = function() {
-//    var canvas = document.getElementById("canvas");
-//    var ctx = canvas.getContext("2d");
-//    var img = document.getElementById("pb");
-//ctx.drawImage(img, 1, 1);
-//    var hRatio = canvas.width / img.width    ;
-//    var vRatio = canvas.height / img.height  ;
-//    var ratio  = Math.max ( hRatio, vRatio );
-//   ctx.drawImage(img, 0, 0, img.width,    img.height,     // source image
-//       0, 0, img.width*ratio, img.height*ratio); // destination image/size
-//};
-
 
 var PBName;
 var imgNum = 0;
 var num = 0;
-//var canvas, ctx, flag = false,
+
 var flag = false,
     prevX = 0,
     currX = 0,
@@ -34,13 +22,11 @@ function init(){
 function createCanvas(id){
     id = document.createElement("CANVAS");
     id.id = "can"+num;
-    //id.width = 800;
-    //id.height = 1000;
     document.getElementById("canvases").appendChild(id);
 }
 
 function insert(canvas,ctx,imageURL){
-//console.log("canvas/id name is "+canvas+ " alt/ctx is "+ ctx);
+
     createCanvas(canvas);
 
     canvas = document.getElementById('can' + num);
@@ -48,67 +34,34 @@ function insert(canvas,ctx,imageURL){
     ctx = canvas.getContext("2d");
     // Set canvas size based on window size.
     canvas.width = document.documentElement.clientWidth - 160;
-    //console.log(canvas.width);
-    //canvas.height = canvas.width * .64;//1.3; //assumes 8.5 x 11 sheet of paper
+
     w = canvas.width;
     h = canvas.height;
 
     // Get image
-    //var img = new Image();
-    //console.log("imageURL is "+imageURL);
-    //if(id === 0){
-     //   img.src = imageURL;
-    //}else{
-
-    //}
-
-
-    //img.width = 640;
-    //img.height = 199;
-    //console.log("img2 is " +img2.src);
-    //var img = document.getElementById('canvasimg');
-
-
     if(imageURL !== null) {
         var img = document.getElementById("image" + num);
-        //console.log(img.width);
         var iRatio = img.height / img.width;
-        //var ipRatio = img.width / img.height;
         if(iRatio < 1){ // image is landscape
             canvas.height = iRatio * canvas.width;
             h = canvas.height;
-            //0.6604584527
-            //console.log("landscape");
+
 
         }else{ // image is portrait
-            //1.5140997831
             var ipRatio = img.width / img.height;
             canvas.height = ipRatio * canvas.width;
             h = canvas.height;
-            //console.log("portrait");
         }
-        //console.log("image width is "+img.width);
-        //console.log("image height is " +img.height);
-        //console.log("canvas width is "+ canvas.width);
-        //console.log("canvas height is "+ canvas.height);
-
 
         var hRatio = canvas.width / img.width;
-        //console.log(img.height);
         var vRatio = canvas.height / img.height;
         var ratio = Math.max(hRatio, vRatio);
-        //img.addEventListener("load", function() {
+
         // execute drawImage statements here
         ctx.drawImage(img, 0, 0, img.width, img.height,     // source image
             0, 0, img.width * ratio, img.height * ratio); // destination image/size
-    } //else{
-      //  var hRatio = canvas.width;
-      //  var vRatio = canvas.height;
+    }
 
-    //}
-    //}, false);
-    //img.src = imageURL;
-    //console.log("image is " + img.src);
     // Mouse events
     canvas.addEventListener("mousemove", function (e) {
         findxy(canvas,ctx,'move', e)
@@ -140,7 +93,6 @@ function insert(canvas,ctx,imageURL){
     // Add the image to the PB object
     var dataURL = canvas.toDataURL();
     newPB.addPage(img.src,dataURL);
-    //console.log(newPB.getPageCount());
     num++;
 }
 
@@ -152,33 +104,21 @@ function createImg(src) {
     image.src = src;
     image.alt = num;
     document.getElementById("preview").appendChild(image);
-    //console.log("createImg image is "+image.src);
-    //insert("image"+imgNum,image.src);
     imgNum++;
 }
 
 
 var loadFile = function(event) {
-
-    //var fileupload = document.getElementById("myFile");
-    //var preview = document.getElementById('image'+imgNum);
-    //canvasimg.src = URL.createObjectURL(event.target.files[0]);
     var fileNum = num+2;
     document.getElementById("myFile2").innerHTML = 'Insert Page #' + fileNum;
     createImg(URL.createObjectURL(event.target.files[0]));
-    //createImg();
-    //imgNum++;
-    //insert();
-    //createCanvas();
 };
 
 
 
 
 function color(obj) {
-    //document.getElementById(obj.id).addEventListener("touchstart", function(){
-    //});
-    //console.log(obj.id);
+
     var palatte = document.getElementsByClassName("colors");
     for(i=0; i<palatte.length;i++){
         palatte[i].style.width = "15%";
@@ -191,8 +131,6 @@ function color(obj) {
     document.getElementById(obj.id).style.width = "19%";
     document.getElementById(obj.id).style.height = "150px";
     x = obj.id;
-    //if (x == "white") y = 14;
-    //else y = 2;
 }
 
 function draw(ctx) {
@@ -224,34 +162,16 @@ function erase() {
 function saveImage() {
     var canvasToSave = document.getElementsByTagName("canvas");
     document.getElementById("canvasimg").style.border = "2px solid";
-    //document.getElementsByTagName("canvas").style.border = "2px solid";
-    //var dataURL = canvas.toDataURL();
-    //document.getElementById("canvasimg1").src = dataURL;
-    //document.getElementById("canvasimg1").style.display = "inline";
-    //console.log(canvasToSave[0].toDataURL());
     for (i=0;i<canvasToSave.length;i++){
         //canvasToSave.to
         var savedImage = document.createElement("IMG");
         savedImage.id = "saved"+i;
         savedImage.className = "savedImage";
-        //var dataURL = canvasToSave[i].toDataURL();
         savedImage.src = canvasToSave[i].toDataURL();
         document.getElementById("saveSpace").appendChild(savedImage);
-        //document.getElementById("saved"+i).src = dataURL;
-        //document.getElementById("saved"+i).style.display = "inline";
-        //document.getElementById("saved"+i).style.visibility = "visible";
-        //document.getElementById("saved"+i).style.position = "absolute";
-        //window.open(document.getElementById("canvasimg").src);
-        //window.open('document.png', '_blank');
     }
-    //console.log("animationstart");
-    //document.getElementById("savemessage").className = "fade";
-    //document.getElementById("savemessage").className = "none";
-    //document.getElementById("palatte").innerHTML = "Scroll Down to See Images.";
-    //document.getElementById("palatte").style.fontSize = "45px";
-    //window.location.hash = "saveSpace";
-    //document.getElementById("savemessage").className = "fade";
-    //console.log("animationstart");
+
+    document.getElementById("savemessage").innerHTML = "Scroll Down to See Images";
     document.getElementById("savemessage").setAttribute("class","fade");
     document.getElementById("savemessage").addEventListener("webkitAnimationStart", function(){
         document.getElementById("savemessage").setAttribute("class","fade");
@@ -270,42 +190,39 @@ function saveImage() {
 
 
 function saveLocal(){
-    //showName();
-    //newPB.getPage(0);
+
     //check to see if there is a Vehicle name before storing
     if(document.getElementById('PBName').value === ''){
         document.getElementById('errormess').innerHTML = "Please enter a Name to store it.";
     }else{
         document.getElementById('errormess').innerHTML = "";
-        //newPB.updateDataURL(canvas.toDataURL());
+
         newPBJSON = JSON.stringify(newPB);
         localStorage.setItem(document.getElementById('PBName').value, newPBJSON);
+        document.getElementById("savemessage").innerHTML = "Saved Successfully";
+        document.getElementById("save").style.visibility = "hidden";
+        document.getElementById("name").style.visibility = "hidden";
+        document.getElementById("savemessage").setAttribute("class","fade");
+        document.getElementById("savemessage").addEventListener("webkitAnimationStart", function(){
+            document.getElementById("savemessage").setAttribute("class","fade");
+        });
+        document.getElementById("savemessage").addEventListener("animationstart", function(){
+            document.getElementById("savemessage").setAttribute("class","fade");
+        });
+        document.getElementById("savemessage").addEventListener("webkitAnimationEnd", function(){
+            document.getElementById("savemessage").className = "none";
+        });
+        document.getElementById("savemessage").addEventListener("animationend", function(){
+            document.getElementById("savemessage").className = "none";
+        });
     }
+
+
 
 }
 
-//function getDataURL(source,dest,callback){
-//    document.getElementById('canvasimg').src = source;
-    //dest = source;
-        //callback();
-//        console.log("in getdataurl");
-//    callback();
-
-//}
-
-//function waitForElement(elementId, callBack){
-//    window.setTimeout(function(){
-//        var element = document.getElementById(elementId);
-//        if(element){
-//            callBack(elementId, element);
-//        }else{
-//            waitForElement(elementId, callBack);
-//        }
-//    },500)
-//}
 
 function getLocal(PBName) {
-    //showName();
     //check to see if the item is in storage first
     var myPB = localStorage.getItem(document.getElementById('PBName').value);
     if (document.getElementById('PBName').value === '') {
@@ -315,51 +232,21 @@ function getLocal(PBName) {
     } else {
         document.getElementById('errormess').innerHTML = '';
         var myPBObj = JSON.parse(myPB);
-
         var PBCount = myPBObj.pageCount;
-        //console.log(PBCount);
-
         erase();
         init();
         for (i=0; i<PBCount;i++) {
             //var canvasImage = document.getElementById('canvasimg');
             var localStorageImage = myPBObj.dataURL[i];
-            //document.getElementById('canvasimg').src = localStorageImage;
-            //console.log("round "+i);
-            //insert(i,localStorageImage);
             createImg(localStorageImage);
-            //waitForElement("can"+i,function(){
-            //if(console.log(document.getElementById("can"+i)) !== null){
-            //    i++;
-            //    console.log("done");
-            //}
-
-                //i++;
-            //});
-
-            //getDataURL(localStorageImage,canvasImage.src,function(){
-             //   if(console.log(document.getElementById("can"+i)) !== null){
-             //       console.log("it's not there");
-                    //getDataURL(localStorageImage,canvasImage.src,function(){
-                    //    console.log("second one");
-                    //});
-                    //console.log(document.getElementById("can"+i).id);
-              //  }else{
-
-              //      console.log("not same");
-              //  }
-            //});
-            //canvasImage.src = localStorageImage;
-            //console.log("number  " + i);
-            //    console.log("its the same");
-            //    console.log("number is " + i);
-                //canvasImage.src = localStorageImage;
         }
     }
+    document.getElementById("get").style.visibility = "hidden";
+    document.getElementById("name").style.visibility = "hidden";
 }
 
 function showName(action) {
-    console.log(document.getElementById("name").style.visibility);
+    //console.log(document.getElementById("name").style.visibility);
     document.getElementById('errormess').innerHTML = "";
     if (document.getElementById(action).style.visibility === "visible") {
         document.getElementById("name").style.visibility = "hidden";
@@ -381,25 +268,12 @@ function showName(action) {
         }
     }
 
-    //if(document.getElementById("PBName").value === "") {
-
-    //}else {
-
-      //  document.getElementById(action).style.visibility = "visible";
-      //  document.getElementById("PBName").value = "Please enter a name.";
-      //  document.getElementById("PBName").style.opacity = .2;
-      //  document.getElementById("name").style.visibility = "visible";
-    //}
-
-    //action;
 }
 
 function findxy(canvas,ctx,res, e) {
     if (res == 'down') {
         prevX = currX;
         prevY = currY;
-        //currX = e.clientX - canvas.offsetLeft;
-        //currY = e.clientY - canvas.offsetTop;
         currX = e.pageX - canvas.offsetLeft;
         currY = e.pageY - canvas.offsetTop;
 
@@ -420,8 +294,6 @@ function findxy(canvas,ctx,res, e) {
         if (flag) {
             prevX = currX;
             prevY = currY;
-            //currX = e.clientX - canvas.offsetLeft;
-            //currY = e.clientY - canvas.offsetTop;
             currX = e.pageX - canvas.offsetLeft;
             currY = e.pageY - canvas.offsetTop;
             draw(ctx);
@@ -430,24 +302,15 @@ function findxy(canvas,ctx,res, e) {
 }
 
 function enableBut() {
-    console.log(document.getElementById("PBName").value);
     if(document.getElementById("PBName").value === "") {
 
-        //document.getElementById("getLocal").style.opacity = .2;
-        //document.getElementById("saveLocal").style.opacity = .2;
-        //document.getElementById("getLocal").style.cursor = "not-allowed";
-        //document.getElementById("saveLocal").style.cursor = "not-allowed";
     }else{
         document.getElementById("PBName").style.opacity = 1;
-        //document.getElementById("getLocal").style.opacity = 1;
-        //document.getElementById("saveLocal").style.opacity = 1;
+
         document.getElementById("getLocal").style.cursor = "auto";
         document.getElementById("saveLocal").style.cursor = "auto";
     }
 
-    //document.getElementById("PBName").addEventListener("click", function () {
-    //    document.getElementById("PBName").value = '';
-    //},false);
 
 }
 
