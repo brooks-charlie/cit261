@@ -176,6 +176,17 @@ ul{
 #clr{
 
 }
+#scroll{
+    color: blue;
+    font-size: 20px;
+    position: absolute;
+    right:0;
+    top:320px;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+}
 #canvasimg{
     visibility: collapse;
     display: none;
